@@ -1,9 +1,160 @@
+* {
+    margin: 0px;
+}
+
 body {
-    background-color: navajowhite;
+    background-color: white;
+    text-align: center;
+    padding:0;
+    font-family:Arial,sans-serif;
+   
+}
+
+.top {
+    background-color: #EAF6F6;
+ padding-top:100px;
+ position: relative;
+ 
+    
 }
 
 h1 {
-    font-family: sans-serif;
-    padding: 30px;
-    text-align: center;
+    font-size:2.5em;
+    color: #66BFBF;
 }
+h2 {
+    
+    color: #66BFBF;
+}
+
+.dev{
+font-weight: normal;
+line-height:2;
+}
+
+#cloud {
+    position:absolute;
+    right:250px;
+    top:10px;
+    padding: 30px 0;
+
+}
+
+.welcome {
+    color: #40514E;
+}
+
+#cloudy {
+    position:absolute;
+    left:250px;
+}
+
+.mypic {
+    border-radius: 100%;
+    height: 50%;
+}
+
+.name {
+    font-size: 30px;
+}
+
+.middle-container {
+
+}
+
+.bottom-container {
+    background-color:#66bfbf ;
+    padding: 40px 0 20px;
+}
+
+a {
+    color: #11999E;
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 10px;
+    
+}
+
+a:hover {
+    color:orange;
+}
+
+.rights {
+    margin-top: 10px;
+    font-size: 10px ;
+}
+
+.skill-row {
+    width:50%;
+    margin: 100px auto;
+    text-align: left;
+    line-height: 2;
+}
+
+.skill-img {
+    width: 25%;
+    float: left;
+    padding-right:30px;
+}
+
+.caboodel {
+    clear: left;
+}
+ 
+hr {
+    border-color: #EAF6F6;
+border-style: dotted none none;
+width: 6%;
+border-top-width: 10px;
+padding-top: 20px;
+margin: 5px auto;
+}
+
+.skills {
+    padding-top: 20px;
+}
+
+.contact-me {
+    padding: 30px;
+}
+
+.contact-button {
+    background: #3D94F6;
+    background-image: -webkit-linear-gradient(top, #3D94F6, #1E62D0);
+    background-image: -moz-linear-gradient(top, #3D94F6, #1E62D0);
+    background-image: -ms-linear-gradient(top, #3D94F6, #1E62D0);
+    background-image: -o-linear-gradient(top, #3D94F6, #1E62D0);
+    background-image: -webkit-gradient(to bottom, #3D94F6, #1E62D0);
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    color: #FFFFFF;
+    font-family: Brush Script MT;
+    font-size: 40px;
+    font-weight: 100;
+    padding: 10px;
+    -webkit-box-shadow: 1px 1px 20px 0 #000000;
+    -moz-box-shadow: 1px 1px 20px 0 #000000;
+    box-shadow: 1px 1px 20px 0 #000000;
+    text-shadow: 1px 1px 20px #000000;
+    border: solid #337FED 1px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    padding-bottom: 20px;
+ }
+ 
+ .contact-button:hover {
+    border: solid #337FED 1px;
+    background: #1E62D0;
+    background-image: -webkit-linear-gradient(top, #1E62D0, #3D94F6);
+    background-image: -moz-linear-gradient(top, #1E62D0, #3D94F6);
+    background-image: -ms-linear-gradient(top, #1E62D0, #3D94F6);
+    background-image: -o-linear-gradient(top, #1E62D0, #3D94F6);
+    background-image: -webkit-gradient(to bottom, #1E62D0, #3D94F6);
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    text-decoration: none;
+ }
