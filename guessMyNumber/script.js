@@ -1,13 +1,4 @@
 'use strict';
-/*
-console.log(document.querySelector('.message').textContent);
-
-document.querySelector('.message').textContent = 'Poop face 🥳';
-
-
-document.querySelector('.number').textContent = 9;
-document.querySelector('.score').textContent = 10;
-*/
 let secretNumber = Math.trunc((Math.random()*20)+1);
 let setMessage = function (msg) {
     document.querySelector('.message').textContent = msg;
@@ -53,7 +44,7 @@ document.querySelector('.check').addEventListener('click', function(){
     }
     else if (guess === secretNumber) {
         document.body.style.background = "lightgreen";
-        document.querySelector('body').style.backgroundColor = '#60b347 ';  
+        document.querySelector('body').style.backgroundColor = '#60b347';  
         document.querySelector('.number').style.width = '35rem';
         setMessage(  "You guessed correctly! 🥳");
         highScore = document.querySelector('.highscore').textContent = score;
