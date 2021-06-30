@@ -50,9 +50,14 @@ document.querySelector('.check').addEventListener('click', function(){
         highScore = document.querySelector('.highscore').textContent = score;
         document.querySelector('.number').textContent = secretNumber;
         } else if (score > 1) {
-            setMessage( guess > secretNumber ? "Guess is too high! Try again" : "Guess is too low! Try again"); 
-            score-- ;
-            document.querySelector('.score').textContent = score;
+            setTimeout((() => {
+                setMessage(" "); }), 200);
+                setTimeout((() => {
+                setMessage(guess > secretNumber ? "Guess is too high! Try again" : "Guess is too low! Try again"); 
+                score-- ;
+                document.querySelector('.score').textContent = score;
+            }), 300);
+           
      
     } else {
             setMessage(  "You lose the game.");
