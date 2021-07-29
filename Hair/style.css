@@ -21,8 +21,9 @@ h2 {
 }
 
 h3 {
-  /* font-family: ; */
-  font-size: 2.225047679593134em;
+  font-family: Assistant - Semi-bold;
+  font-weight: 600;
+  font-size: 1.3125em;
   color: black;
   position: relative;
 }
@@ -112,8 +113,8 @@ h3 {
   width: 103px;
   height: auto;
   position: relative;
-  left: 35%;
-  top: 12.3em;
+  right: 37%;
+  top: 11.5em;
 }
 
 .nameLine {
@@ -234,13 +235,45 @@ h3 {
 }
 
 .artists {
-  margin: 0px;
+  margin: px;
+}
+.teamPics {
+  width: 8.125em;
+  height: auto;
+  padding: 3px;
+}
+
+.artistDescription {
+  font-family: "Assistant";
+  font-size: 1em;
 }
 .aboutVladi {
+  display: flex;
+}
+
+.vladi {
+  top: 0.5em;
+  font-size: 1.3em;
+}
+.vladiFrame {
+  width: 8.125em;
+  border: solid;
+  border-width: 1px;
+  border-color: #c69c6d;
+  position: absolute;
+  left: 100px;
+  top: 50px;
+  z-index: 10;
 }
 
 .aboutIvan {
+  display: flex;
+}
+.ivanDescription,
+.ivan {
+  padding-right: 1.5em;
 }
 
 .aboutTanya {
+  display: flex;
 }
