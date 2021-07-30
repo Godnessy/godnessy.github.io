@@ -277,3 +277,76 @@ h3 {
 .aboutTanya {
   display: flex;
 }
+
+.footerContainer {
+  background-color: lightgray;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 9.5625em 7.0625em 5.125em 3.5625em;
+  grid-template-areas:
+    "social social"
+    "info info"
+    "navigate call"
+    "footer footer";
+}
+.social {
+  position: relative;
+  grid-area: social;
+}
+.socialpic {
+  width: 12.1875em;
+  height: auto;
+}
+
+.infoContainer1 {
+  grid-area: info;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  font-family: "Assistant", sans-serif;
+  font-size: 13px;
+}
+.address {
+  padding-left: 1.5em;
+}
+
+.operationHours {
+  padding-right: 1.5em;
+}
+
+.callUs {
+  grid-area: call;
+  display: flex;
+}
+
+.callSymbol {
+  width: 30%;
+  height: auto;
+}
+.navigate {
+  grid-area: navigate;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  grid-area: footer;
+}
+
+.weReadEmail {
+  color: white;
+  position: relative;
+  padding-left: 3em;
+  bottom: 0.5em;
+}
+.email {
+  font-family: "Varela Round";
+  color: #c69c6d;
+}
+
+.a:link {
+  color: #c69c6d;
+}
