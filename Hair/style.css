@@ -16,13 +16,13 @@ h1 {
 }
 
 h2 {
-  font-family: "-Assistant - Regular";
+  font-family: "Assistant - Regular";
   font-size: 21px;
   color: #c69c6d;
 }
 
 h3 {
-  font-family: Assistant - Semi-bold;
+  font-family: "Assistant";
   font-weight: 600;
   font-size: 1.3125em;
   color: black;
@@ -31,7 +31,7 @@ h3 {
 .container {
   display: grid;
   grid-template-columns: 360px;
-  grid-template-rows: 38.125em auto 58.5em;
+  grid-template-rows: 38.125em auto auto;
 }
 
 .header {
@@ -211,7 +211,8 @@ h3 {
 }
 
 .aboutUsText {
-  font-family: "Arial Regular", "Arial", sans-serif;
+  font-family: "Assistant";
+  font-size: 1em;
   padding-right: 20px;
 }
 
@@ -272,7 +273,7 @@ h3 {
 }
 .ivanDescription,
 .ivan {
-  padding-right: 1.5em;
+  padding-right: 0.5em;
 }
 
 .aboutTanya {
@@ -280,7 +281,7 @@ h3 {
 }
 
 .footerContainer {
-  background-color: lightgray;
+  background-color: white;
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -310,24 +311,40 @@ h3 {
   font-size: 13px;
 }
 .address {
-  padding-left: 1.5em;
+  padding-left: 5em;
+  font-size: 1.2em;
 }
 
 .operationHours {
+  font-size: 1.2em;
   padding-right: 1.5em;
 }
 
 .callUs {
   grid-area: call;
   display: flex;
+  justify-content: right;
 }
 
 .callSymbol {
-  width: 30%;
-  height: auto;
+  width: 1.6875em;
+  height: 1.6875em;
 }
 .navigate {
-  grid-area: navigate;
+  display: flex;
+  justify-content: right;
+}
+.nagivateSymbol {
+  width: 1.2em;
+  height: 1.6875em;
+}
+.callAndNavText {
+  font-size: 1.3em;
+  text-decoration: underline;
+  text-decoration-color: #c69c6d;
+  position: relative;
+  right: 0.5em;
+  bottom: 1em;
 }
 
 .footer {
@@ -343,11 +360,29 @@ h3 {
   padding-left: 3em;
   bottom: 0.5em;
 }
+
 .email {
-  font-family: "Varela Round";
-  color: #c69c6d;
+  position: relative;
+  left: 10%;
 }
 
-.a:link {
-  color: #c69c6d;
+a:link {
+  font-family: "ariel";
+  text-decoration: underline;
+  text-decoration-skip: none;
+  text-decoration-color: #c69c6d;
+  text-decoration-thickness: 0.1em;
+  color: white;
+}
+A:visited {
+  text-decoration: none;
+  color: white;
+}
+A:active {
+  text-decoration: none;
+  color: white;
+}
+A:hover {
+  text-decoration: underline;
+  color: white;
 }
