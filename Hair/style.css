@@ -101,7 +101,7 @@ h3 {
       rgba(0, 0, 0, 0.78) 95.98019737909107%
     );
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: 100%;
   background-blend-mode: multiply;
   grid-row-start: 1;
   width: 100%;
@@ -268,7 +268,8 @@ h3 {
   top: 50px;
   z-index: 10;
 }
-
+.ivanContainer {
+}
 .aboutIvan {
   display: flex;
 }
@@ -325,6 +326,8 @@ h3 {
   grid-area: call;
   display: flex;
   justify-content: right;
+  position: relative;
+  left: 45%;
 }
 
 .callSymbol {
@@ -333,7 +336,9 @@ h3 {
 }
 .navigate {
   display: flex;
-  justify-content: right;
+  /* justify-content: right; */
+  position: relative;
+  left: 50%;
 }
 .nagivateSymbol {
   width: 1.2em;
@@ -350,7 +355,7 @@ h3 {
 
 .footer {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   background-color: black;
   grid-area: footer;
 }
