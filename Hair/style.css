@@ -3,7 +3,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap");
 
 body {
-  margin: 0px;
+  margin: 0;
+  padding: 0;
   text-align: right;
   overflow-x: hidden;
   width: 100%;
@@ -30,7 +31,7 @@ h3 {
 }
 .container {
   display: grid;
-  grid-template-columns: 360px;
+  grid-template-columns: auto;
   grid-template-rows: 38.125em auto auto;
 }
 
@@ -224,7 +225,7 @@ h3 {
 
 .aboutContainer {
   display: grid;
-  grid-template-columns: 360px;
+  grid-template-columns: auto;
   grid-template-rows: 50%, 1fr 1fr 1fr;
 }
 
