@@ -377,11 +377,46 @@ h3 {
     z-index: 10;
   }
 
+  .aboutUs {
+    display: none;
+  }
+  .teamPics {
+    width: 24em;
+    height: 28em;
+    margin: 24px;
+  }
+
+  .aboutVladi,
+  .aboutTanya,
+  .aboutIvan {
+    margin-left: 10em;
+  }
+
+  .artistDescription {
+    font-size: 1.5em;
+  }
+
   a:link {
     text-decoration: none;
   }
 }
 @media screen and (max-width: 500px) {
+  .artistDescription {
+    font-size: 1em;
+  }
+  .aboutVladi,
+  .aboutTanya,
+  .aboutIvan {
+    margin-left: 0em;
+  }
+  .teamPics {
+    width: 8.125em;
+    height: auto;
+    margin: 10px;
+  }
+  .aboutUs {
+    display: block;
+  }
   #headerPic {
     display: block;
   }
