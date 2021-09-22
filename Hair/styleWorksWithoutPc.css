@@ -1,0 +1,761 @@
+@import url("https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  text-align: right;
+  overflow-x: hidden;
+  width: 100%;
+}
+#headerpicWhite {
+  display: none;
+}
+.pcBgPic {
+  display: none;
+}
+h1 {
+  font-family: "Varela Round", sans-serif;
+  font-size: 2.125em;
+  color: #c69c6d;
+}
+
+h2 {
+  font-family: "Assistant - Regular";
+  font-size: 1.3125em;
+  color: #c69c6d;
+}
+
+h3 {
+  font-family: "Assistant";
+  font-weight: 600;
+  font-size: 1.3125em;
+  color: black;
+  position: relative;
+}
+.container {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 38.125em auto auto;
+}
+
+.header {
+  display: flex;
+  align-content: center;
+  position: fixed;
+  top: 0;
+  opacity: 92%;
+  filter: blur(0.3px);
+  width: 100%;
+  height: 3.5em;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  z-index: 100;
+}
+
+#headerPic {
+  position: absolute;
+  left: 1.5em;
+  bottom: 0.6875em;
+  padding: 0px 0px 2px 0px;
+  width: 13em;
+  height: auto;
+}
+
+.headerText {
+  position: absolute;
+  left: 2.5em;
+  bottom: 0.2em;
+  font-size: 1.3em;
+  background-color: rgba(255, 255, 255, 0);
+  box-sizing: border-box;
+  font-family: "Playfair Display SC", sans-serif;
+  font-weight: 700;
+  color: #333333;
+  text-align: center;
+  opacity: 100%;
+}
+
+.bookBtn {
+  border: 4px solid #c69c6d;
+  background-color: rgba(255, 255, 255, 0);
+  box-sizing: border-box;
+  font-family: "Varela Round", sans-serif;
+  color: #c69c6d;
+  background-color: #c69c6d;
+  text-align: center;
+  line-height: normal;
+}
+.book1 {
+  color: #ffff;
+  background-color: #c69c6d;
+}
+.book2 {
+  color: #ffff;
+  background-color: #c69c6d;
+}
+.headerpicWhite {
+  display: none;
+}
+.topPic {
+  background-image: url(./pics/topPic.png),
+    linear-gradient(
+      -150.57837368514885deg,
+      rgba(0, 0, 0, 0.74) 7.678104774544462%,
+      rgba(0, 0, 0, 0.51) 41.23289996427217%,
+      rgba(0, 0, 0, 0.78) 95.98019737909107%
+    );
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: multiply;
+  grid-row-start: 1;
+  border: 1px solid #797979;
+  box-sizing: border-box;
+  z-index: 5;
+}
+
+.aboutUs {
+  text-align: right;
+  /* grid-row: 1/ 3; */
+  padding: 0 24px 0 24px;
+}
+
+.aboutUsTitle {
+  color: #c69c6d;
+  font-size: 3.125em;
+  margin-top: 5px;
+  padding-right: 10%;
+  margin-bottom: 10px;
+}
+
+.aboutUsText {
+  font-family: "Assistant";
+  font-size: 1em;
+  padding-right: 1.25em;
+}
+
+.teamPics {
+  width: 30%;
+  height: auto;
+  padding: 1.25em;
+}
+
+.aboutContainer {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 50%, 1fr 1fr 1fr;
+}
+.artists {
+  margin: px;
+}
+.teamPics {
+  width: 8.125em;
+  height: auto;
+  padding: 3px;
+}
+
+.artistDescription {
+  font-family: "Assistant";
+  font-size: 1em;
+}
+
+.aboutVladi {
+  display: flex;
+  margin: 1.5em;
+}
+
+.vladi {
+  top: 0.5em;
+  font-size: 1.3em;
+}
+.vladiFrame {
+  width: 8.125em;
+  border: solid;
+  border-width: 1px;
+  border-color: #c69c6d;
+  position: absolute;
+  left: 100px;
+  top: 50px;
+  z-index: 10;
+}
+
+.aboutIvan {
+  display: flex;
+  padding: 0 24px 0 24px;
+}
+.ivanDescription,
+.ivan {
+  padding-right: 0.5em;
+}
+
+.aboutTanya {
+  display: flex;
+  padding: 2em;
+}
+
+.footerContainer {
+  background-color: white;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 9.5625em 7.0625em 5.125em 3.5625em;
+  grid-template-areas:
+    "social social"
+    "info info"
+    "navigate call"
+    "footer footer";
+}
+.social {
+  position: relative;
+  grid-area: social;
+  padding-right: 1.5em;
+}
+.socialpic {
+  width: 12.1875em;
+  height: auto;
+}
+
+.infoContainer1 {
+  grid-area: info;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  font-family: "Assistant", sans-serif;
+  font-size: 0.8125em;
+}
+.address {
+  padding-left: 5em;
+  font-size: 1.2em;
+}
+
+.operationHours {
+  font-size: 1.2em;
+  padding-right: 1.5em;
+}
+
+.callUs {
+  grid-area: call;
+  display: flex;
+  justify-content: right;
+  position: relative;
+  margin-right: 1em;
+}
+
+.callSymbol {
+  width: 1.6875em;
+  height: 1.6875em;
+}
+.navigate {
+  display: flex;
+  position: relative;
+  left: 50%;
+}
+.nagivateSymbol {
+  width: 1.2em;
+  height: 1.6875em;
+}
+.callAndNavText {
+  font-size: 1.3em;
+  text-decoration: underline;
+  text-decoration-color: #c69c6d;
+  position: relative;
+  right: 0.5em;
+  bottom: 1em;
+}
+
+/* @media screen and (max-width: 1450px) {
+  .mainPic {
+    display: none;
+  }
+  .topPic {
+    display: grid;
+    grid-template-columns: 3fr 0.5fr 3fr 1fr;
+    grid-template-rows: 0.5fr 2fr 2fr 1fr;
+    background-image: url(./pics/PCbackgroundPic.png),
+      linear-gradient(
+        -150.57837368514885deg,
+        rgba(0, 0, 0, 0.74) 7.678104774544462%,
+        rgba(0, 0, 0, 0.51) 41.23289996427217%,
+        rgba(0, 0, 0, 0.78) 95.98019737909107%
+      );
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+    grid-row-start: 1;
+    border: 1px solid #797979;
+    box-sizing: border-box;
+    z-index: 5;
+  }
+  .header {
+    display: flex;
+    align-content: center;
+    position: fixed;
+    top: 0;
+    opacity: 92%;
+    filter: blur(0.3px);
+    width: 100%;
+    height: 5.875em;
+    background-color: black;
+    box-sizing: border-box;
+    z-index: 100;
+  }
+
+  #headerPic {
+    position: absolute;
+    left: 1.5em;
+    bottom: 0.6875em;
+    padding: 0px 0px 2px 0px;
+    width: 13em;
+    height: auto;
+  }
+
+  .headerText {
+    position: absolute;
+    left: 2.5em;
+    bottom: 0.2em;
+    font-size: 1.3em;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    font-family: "Playfair Display SC", sans-serif;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    opacity: 100%;
+  }
+
+  .bookBtn {
+    border: 4px solid #c69c6d;
+    background-color: #c69c6d;
+    box-sizing: border-box;
+    font-family: "Varela Round", sans-serif;
+    color: #ffffff;
+    text-align: center;
+    line-height: normal;
+    position: relative;
+  }
+
+  .book1 {
+    position: absolute;
+    top: 0.5em;
+    right: 5em;
+    width: 5em;
+    height: 2.5rem;
+    padding-top: 9px;
+    border-width: thin;
+    background-color: #c69c6d;
+    color: #fff;
+    font-size: 15px;
+  }
+  .mainSymbol {
+    display: none;
+  }
+} */
+@media screen and (max-width: 500px) {
+  .header {
+    display: flex;
+    align-content: center;
+    position: fixed;
+    top: 0;
+    opacity: 92%;
+    filter: blur(0.3px);
+    width: 100%;
+    height: 3.5em;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    z-index: 100;
+  }
+
+  #headerPic {
+    position: absolute;
+    left: 1.5em;
+    bottom: 0.6875em;
+    padding: 0px 0px 2px 0px;
+    width: 13em;
+    height: auto;
+  }
+
+  .headerText {
+    position: absolute;
+    left: 2.5em;
+    bottom: 0.2em;
+    font-size: 1.3em;
+    background-color: rgba(255, 255, 255, 0);
+    box-sizing: border-box;
+    font-family: "Playfair Display SC", sans-serif;
+    font-weight: 700;
+    color: #333333;
+    text-align: center;
+    opacity: 100%;
+  }
+  .book1 {
+    position: relative;
+    right: 35%;
+  }
+  .topPic {
+    background-image: url(./pics/topPic.png),
+      linear-gradient(
+        -150.57837368514885deg,
+        rgba(0, 0, 0, 0.74) 7.678104774544462%,
+        rgba(0, 0, 0, 0.51) 41.23289996427217%,
+        rgba(0, 0, 0, 0.78) 95.98019737909107%
+      );
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+    grid-row-start: 1;
+    border: 1px solid #797979;
+    box-sizing: border-box;
+    z-index: 5;
+  }
+
+  .bookBtn {
+    border: 4px solid #c69c6d;
+    background-color: #c69c6d;
+    box-sizing: border-box;
+    font-family: "Varela Round", sans-serif;
+    color: #ffffff;
+    text-align: center;
+    line-height: normal;
+
+    border-radius: 10%;
+  }
+  .book1 {
+    position: relative;
+    right: 60%;
+    bottom: 10%;
+    text-align: center;
+    width: 6.8em;
+    height: 2.5em;
+    border: 4px solid #c69c6d;
+    border-radius: 10%;
+    padding-top: 0.2em;
+    box-sizing: border-box;
+    font-family: "Varela Round", sans-serif;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #c69c6d;
+    color: #fff;
+  }
+
+  .mainPic {
+    width: 6.4375em;
+    height: auto;
+    position: relative;
+    right: 35%;
+    top: 10em;
+  }
+  .nameLine {
+    position: relative;
+    right: 40%;
+    top: 4em;
+    width: 22.4375em;
+    height: auto;
+    font-size: 1.875em;
+    font-family: "Varela round";
+    font-size: 2.125em;
+    color: white;
+    text-align: center;
+  }
+
+  .profTag {
+    position: relative;
+    top: 5em;
+    right: 0.8em;
+    width: 22.4375em;
+    height: 3.625em;
+    font-size: 1.3125em;
+    font-family: "Assistant";
+    font-weight: 200;
+    text-align: center;
+    color: #c69c6d;
+  }
+
+  .book2 {
+    position: relative;
+    text-align: center;
+    top: 3em;
+    left: 10.5em;
+    width: 6.4375em;
+    height: 2.5em;
+    border: 4px solid #c69c6d;
+    border-radius: 10%;
+    padding-top: 0.2em;
+    box-sizing: border-box;
+    font-family: "Varela Round", sans-serif;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #c69c6d;
+    color: #fff;
+  }
+
+  .infoContainer {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    top: 4em;
+    font-family: "Assistant", sans-serif;
+    color: rgba(255, 255, 255, 0.87);
+  }
+
+  .info1 {
+    text-align: right;
+    position: inherit;
+    top: 1em;
+    left: 60%;
+  }
+
+  .info2 {
+    text-align: right;
+    position: inherit;
+    top: 1em;
+    right: 10%;
+  }
+  .leaf {
+    width: 12%;
+    height: auto;
+    position: relative;
+    left: 12em;
+    bottom: 1.2em;
+    z-index: 10;
+  }
+  .footer {
+    display: flex;
+    /* justify-content: space-between; */
+    background-color: black;
+    grid-area: footer;
+  }
+
+  .weReadEmail {
+    color: white;
+    position: relative;
+    left: 15%;
+    padding-left: 3em;
+    bottom: 0.5em;
+  }
+
+  .email {
+    position: relative;
+    left: 10%;
+  }
+
+  a:link {
+    font-family: "ariel";
+    text-decoration: underline;
+    text-decoration-skip: none;
+    text-decoration-color: #c69c6d;
+    text-decoration-thickness: 0.1em;
+    color: white;
+  }
+  A:visited {
+    text-decoration: none;
+    color: white;
+  }
+  A:active {
+    text-decoration: none;
+    color: white;
+  }
+  A:hover {
+    text-decoration: underline;
+    color: white;
+  }
+}
+@media screen and (max-width: 376px) {
+  .header {
+    display: flex;
+    align-content: center;
+    position: fixed;
+    top: 0;
+    opacity: 92%;
+    filter: blur(0.3px);
+    width: 100%;
+    height: 3.5em;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    z-index: 100;
+  }
+
+  #headerPic {
+    position: absolute;
+    left: 1.5em;
+    bottom: 0.6875em;
+    padding: 0px 0px 2px 0px;
+    width: 13em;
+    height: auto;
+  }
+
+  .headerText {
+    position: absolute;
+    left: 2.5em;
+    bottom: 0.2em;
+    font-size: 1.3em;
+    background-color: rgba(255, 255, 255, 0);
+    box-sizing: border-box;
+    font-family: "Playfair Display SC", sans-serif;
+    font-weight: 700;
+    color: #333333;
+    text-align: center;
+    opacity: 100%;
+  }
+
+  .bookBtn {
+    border: 4px solid #c69c6d;
+    background-color: rgba(255, 255, 255, 0);
+    box-sizing: border-box;
+    font-family: "Varela Round", sans-serif;
+    color: #c69c6d;
+    border-radius: 10%;
+    text-align: center;
+    line-height: normal;
+  }
+  .book1 {
+    position: absolute;
+    top: -0.3em;
+    left: 17em;
+    width: 4.5625em;
+    height: 2.25em;
+    padding-top: 0.3em;
+    border-width: thin;
+    background-color: #c69c6d;
+    background-color: #c69c6d;
+    color: #fff;
+  }
+  .mainPic {
+    width: 6.4375em;
+    height: auto;
+    position: relative;
+    right: 33%;
+    top: 10em;
+  }
+  .nameLine {
+    position: relative;
+    right: 50%;
+    top: 4em;
+    width: 22.4375em;
+    height: auto;
+    font-size: 1.875em;
+    font-family: "Varela round";
+    font-size: 2.125em;
+    color: white;
+    text-align: center;
+  }
+
+  .profTag {
+    position: relative;
+    top: 5em;
+    right: 1.7em;
+    width: 22.4375em;
+    height: 3.625em;
+    font-size: 1.3125em;
+    font-family: "Assistant";
+    font-weight: 200;
+    text-align: center;
+    color: #c69c6d;
+  }
+
+  .book2 {
+    position: relative;
+    text-align: center;
+    top: 3em;
+    left: 9.3em;
+    width: 6.4375em;
+    height: 2.5em;
+    border: 4px solid #c69c6d;
+    border-radius: 10%;
+    padding-top: 0.2em;
+    box-sizing: border-box;
+    font-family: "Varela Round", sans-serif;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #c69c6d;
+    color: #fff;
+  }
+
+  .infoContainer {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    padding-top: 1em;
+    top: 4em;
+    font-family: "Assistant", sans-serif;
+    color: rgba(255, 255, 255, 0.87);
+  }
+
+  .info1 {
+    text-align: right;
+    position: inherit;
+    bottom: 1.1875em;
+    left: 57%;
+  }
+
+  .info2 {
+    text-align: right;
+    position: inherit;
+    bottom: 1.1875em;
+    right: 20%;
+  }
+  .weReadEmail {
+    color: white;
+    position: relative;
+    left: 10%;
+    padding-left: 3em;
+    bottom: 0.5em;
+  }
+  .leaf {
+    width: 12%;
+    height: auto;
+    position: relative;
+    left: 45%;
+    bottom: 1.2em;
+    z-index: 10;
+  }
+}
+@media screen and (max-width: 361px) {
+  .mainPic {
+    width: 6.4375em;
+    height: auto;
+    position: relative;
+    right: 33%;
+    top: 10em;
+  }
+  .nameLine {
+    position: relative;
+    right: 55%;
+    top: 4em;
+    width: 22.4375em;
+    height: auto;
+    font-size: 1.875em;
+    font-family: "Varela round";
+    font-size: 2.125em;
+    color: white;
+    text-align: center;
+  }
+
+  .profTag {
+    position: relative;
+    top: 5em;
+    right: 2.4em;
+    width: 22.4375em;
+    height: 3.625em;
+    font-size: 1.3125em;
+    font-family: "Assistant";
+    font-weight: 200;
+    text-align: center;
+    color: #c69c6d;
+  }
+
+  .book2 {
+    position: relative;
+    text-align: center;
+    top: 3em;
+    left: 8.5em;
+    width: 6.4375em;
+    height: 2.5em;
+    border: 4px solid #c69c6d;
+    border-radius: 10%;
+    padding-top: 0.2em;
+    box-sizing: border-box;
+    font-family: "Varela Round", sans-serif;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #c69c6d;
+    color: #fff;
+  }
+}
