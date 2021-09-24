@@ -195,7 +195,7 @@ h3 {
 }
 
 .footerContainer {
-  background-color: white;
+  background-color: #f5f4f4;
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -381,9 +381,9 @@ h3 {
     display: none;
   }
   .teamPics {
-    width: 24em;
-    height: 28em;
-    margin: 24px;
+    width: 28em;
+    height: 29em;
+    padding: 5em;
   }
 
   .aboutVladi,
@@ -396,11 +396,107 @@ h3 {
     font-size: 1.5em;
   }
 
+  .aboutArtists {
+    margin-right: 9em;
+  }
+  .description {
+    position: relative;
+    top: 5em;
+  }
+  .divider {
+    height: 300px;
+  }
+  .footerContainer {
+    background-color: #f5f4f4;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 9.5625em 7.0625em 5.125em 3.5625em;
+    grid-template-areas:
+      "social social"
+      "info info"
+      "navigate call"
+      "footer footer";
+  }
+  /* .social {
+    background-color: #ffffff;
+    width: 200px;
+    position: relative;
+    left: 65%;
+    bottom: 50%;
+  }
+  .contact {
+    position: relative;
+    left: 25%;
+    font-size: 1.3em;
+  }
+  .socialpic {
+    position: inherit;
+    right: 70%;
+    width: 27em;
+    bottom: 15%;
+  } */
+
   a:link {
     text-decoration: none;
   }
 }
 @media screen and (max-width: 500px) {
+  .divider {
+    display: none;
+  }
+  /* .social {
+    position: relative;
+    background-color: #f5f4f4;
+    left: 40%;
+    bottom: 0%;
+    grid-area: social;
+    padding-right: 1.5em;
+    width: 1em;
+  }
+  .contact {
+    position: none;
+    left: 0%;
+    font-size: 1em;
+  }  
+  .socialpic {
+    position: inherit;
+    right: 0%;
+    width: 10em;
+    bottom: 0%;
+  }
+  */
+  .contact {
+    position: relative;
+    top: 10%;
+    font-family: "Assistant";
+  }
+  .socialpic {
+    background-color: white;
+  }
+  .footerContainer {
+    background-color: #f5f4f4;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 9.5625em 7.0625em 5.125em 3.5625em;
+    grid-template-areas:
+      "social social"
+      "info info"
+      "navigate call"
+      "footer footer";
+  }
+  .description {
+    top: 0em;
+  }
+  .teamPics {
+    width: 0em;
+    height: 0em;
+    padding: 0em;
+  }
+  .aboutArtists {
+    margin: 0;
+  }
   .artistDescription {
     font-size: 1em;
   }
@@ -634,6 +730,13 @@ h3 {
   }
 }
 @media screen and (max-width: 376px) {
+  .divider {
+    display: none;
+  }
+
+  .footerContainer {
+    background-color: #f5f4f4;
+  }
   #headerPicWhite {
     display: none;
   }
@@ -789,6 +892,9 @@ h3 {
   }
 }
 @media screen and (max-width: 361px) {
+  .divider {
+    display: none;
+  }
   #headerPicWhite {
     display: none;
   }
