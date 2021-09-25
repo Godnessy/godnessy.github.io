@@ -418,7 +418,7 @@ h3 {
       "navigate call"
       "footer footer";
   }
-  /* .social {
+  .social {
     background-color: #ffffff;
     width: 200px;
     position: relative;
@@ -428,52 +428,103 @@ h3 {
   .contact {
     position: relative;
     left: 25%;
-    font-size: 1.3em;
+    font-size: 1.5em;
   }
   .socialpic {
     position: inherit;
     right: 70%;
     width: 27em;
     bottom: 15%;
-  } */
+  }
+  .footerContainer {
+    background-color: #f5f4f4;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 9.5625em 15em 12em 3.5625em;
+    grid-template-areas:
+      "social social"
+      "info info"
+      "navigate call"
+      "footer footer";
+  }
+  .address {
+    font-size: 2em;
+  }
+  .operationHours {
+    font-size: 2em;
+  }
+  .footer {
+    display: flex;
+    grid-area: footer;
+  }
+  .callSymbol {
+    width: 3em;
+    height: 3em;
+  }
+  .callAndNavText {
+    font-size: 1.3em;
+    text-decoration: underline;
+    text-decoration-color: #c69c6d;
+    position: relative;
+    right: 0.5em;
+    bottom: 1em;
+  }
+  .nagivateSymbol {
+    width: 2em;
+    height: 3em;
+  }
 
   a:link {
     text-decoration: none;
   }
 }
+
 @media screen and (max-width: 500px) {
+  .nagivateSymbol {
+    width: 1.2em;
+    height: 1.6875em;
+  }
+  .callAndNavText {
+    font-size: 1.3em;
+    text-decoration: underline;
+    text-decoration-color: #c69c6d;
+    position: relative;
+    right: 0.5em;
+    bottom: 1em;
+  }
+  .callSymbol {
+    width: 1.6875em;
+    height: 1.6875em;
+  }
+  .address {
+    padding-left: 5em;
+    font-size: 1.2em;
+  }
+  .operationHours {
+    font-size: 1.2em;
+  }
+
   .divider {
     display: none;
   }
-  /* .social {
+  .social {
     position: relative;
     background-color: #f5f4f4;
-    left: 40%;
+    left: 30%;
     bottom: 0%;
     grid-area: social;
-    padding-right: 1.5em;
-    width: 1em;
   }
-  .contact {
-    position: none;
-    left: 0%;
-    font-size: 1em;
-  }  
-  .socialpic {
-    position: inherit;
-    right: 0%;
-    width: 10em;
-    bottom: 0%;
-  }
-  */
   .contact {
     position: relative;
-    top: 10%;
-    font-family: "Assistant";
   }
   .socialpic {
-    background-color: white;
+    position: relative;
+    left: 3em;
+    width: 10em;
+    bottom: 1em;
   }
+
   .footerContainer {
     background-color: #f5f4f4;
     position: relative;
@@ -690,7 +741,6 @@ h3 {
   }
   .footer {
     display: flex;
-    /* justify-content: space-between; */
     background-color: black;
     grid-area: footer;
   }
@@ -878,9 +928,17 @@ h3 {
   .weReadEmail {
     color: white;
     position: relative;
-    left: 10%;
+    left: 5%;
     padding-left: 3em;
     bottom: 0.5em;
+  }
+  .contact {
+    position: relative;
+    left: 1em;
+  }
+  .socialpic {
+    position: relative;
+    left: 1em;
   }
   .leaf {
     width: 12%;
@@ -889,6 +947,12 @@ h3 {
     left: 45%;
     bottom: 1.2em;
     z-index: 10;
+  }
+  .footerContainer {
+    margin-bottom: 0;
+  }
+  .footer {
+    display: flex;
   }
 }
 @media screen and (max-width: 361px) {
