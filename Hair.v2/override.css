@@ -1,0 +1,37 @@
+.btnColor {
+  color: #c69c6d;
+}
+
+.my-Btn {
+  color: #c69c6d;
+  background-color: white;
+  border-color: #c69c6d;
+  border-width: 2px;
+  font-family: "Assistant SemiBold", "Assistant Regular", "Assistant",
+    sans-serif;
+}
+
+/* .my-col{
+  border: 2px;
+  border: solid;
+  align-content: left;
+
+} */
+
+.logo {
+position: relative;
+
+}
+
+.logoMob{
+width: 100%;
+height: auto;
+}
+
+.picCol{
+  height: 70px;
+}
+
+.textStyle{
+  font-family: "Arial";
+}
