@@ -6,7 +6,7 @@
   color: #c69c6d;
   background-color: white;
   border-color: #c69c6d;
-  border-width: 2px;
+  border: 2px solid;
   font-family: "Assistant SemiBold", "Assistant Regular", "Assistant",
     sans-serif;
 }
@@ -34,4 +34,8 @@ height: auto;
 
 .textStyle{
   font-family: "Arial";
+}
+
+.saloonDiv{
+
 }
