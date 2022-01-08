@@ -1,0 +1,39 @@
+.container {
+  display: grid;
+  width: 50%;
+  grid-template-columns: 3fr 3fr 3fr;
+  grid-template-rows: 100px 70px 70px 70px 70px 70px 70px;
+}
+
+button {
+  background-color: #2969d9;
+  border: 1px solid #18ab29;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 17px;
+  padding: 20px 14px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #2f6627;
+}
+
+button:hover {
+  background-color: #9780f5;
+}
+
+button:active {
+  position: relative;
+  top: 1px;
+}
+
+#equals {
+  grid-column: 1 / 4;
+  grid-row: 7;
+}
+#resultBox {
+  display: flex;
+  border: 1px solid;
+  font-size: 70px;
+  grid-column: 1 / 4;
+}
