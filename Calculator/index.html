@@ -2,7 +2,6 @@
 <html>
   <head>
     <link rel="stylesheet" href="/style.css" />
-    <script src="/script.js"></script>
   </head>
 
   <body>
@@ -10,23 +9,27 @@
       <div id="resultBox">
         <span> <div id="result"></div> </span>
         <span><div id="arg1"></div></span>
+        <span><div id="operand"></div></span>
         <span><div id="arg2"></div></span>
       </div>
 
-      <button onclick="calc()" id="button1">1</button
-      ><button id="button2">2</button><button id="button3">3</button>
-      <button id="button4">4</button>
-      <button id="button5">5</button>
-      <button id="button6">6</button>
-      <button id="button7">7</button>
-      <button id="button8">8</button>
-      <button id="button9">9</button>
-      <button id="button0">0</button>
-      <button id="plus">+</button>
-      <button id="minus">-</button>
-      <button id="multiply">*</button>
-      <button id="divide">/</button>
-      <button id="equals">=</button>
+      <button id="button1" onclick="calc(`1`)">1</button>
+      <button id="button2" onclick="calc(`2`)">2</button>
+      <button id="button3" onclick="calc(`3`)">3</button>
+      <button id="button4" onclick="calc(`4`)">4</button>
+      <button id="button5" onclick="calc(`5`)">5</button>
+      <button id="button6" onclick="calc(`6`)">6</button>
+      <button id="button7" onclick="calc(`7`)">7</button>
+      <button id="button8" onclick="calc(`8`)">8</button>
+      <button id="button9" onclick="calc(`9`)">9</button>
+      <button id="button0" onclick="calc(`0`)">0</button>
+      <button id="plus" onclick="operator(`+`)">+</button>
+      <button id="minus" onclick="operator(`-`)">-</button>
+      <button id="multiply" onclick="operator(`*`)">*</button>
+      <button id="divide" onclick="operator(`/`)">/</button>
+      <button id="equals" onclick="showResult(result)">=</button>
+      <button id="reset" onClick="reset()">C</button>
     </div>
+    <script src="/script.js"></script>
   </body>
 </html>
