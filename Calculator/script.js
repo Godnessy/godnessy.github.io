@@ -1,48 +1,52 @@
-let result = "";
-let arg1 = "";
-let arg2 = null;
+"use strict";
+const arg1_ui = document.getElementById("arg1");
+const result_ui = document.getElementById("result");
 let operand = null;
+const operand_ui = document.getElementById("operand");
+result = "";
+arg1 = "";
 
 function calc(num) {
   if (operand === null) {
     arg1 += num;
-    showArg1();
+    showUi(arg1_ui, arg1);
+    console.log(`result is ${result} and is ${typeof result}`);
   } else {
-    arg2 = num;
-    showArg2();
+    result = num;
+    showUi(result_ui, result);
     operator(operand);
+    console.log(`arg2 is ${arg2} and is ${typeof result}`);
   }
 }
 
 function operator(sign) {
   operand = sign;
-  showOperand();
-  if (arg2 === null) {
+  showUi(operand_ui, operand);
+  let a = parseInt(arg1);
+  let b = parseInt(result);
+  let c = 0;
+  if (result == "") {
   } else {
     switch (sign) {
       case `+`:
-        a = parseInt(arg1) + parseInt(arg2);
-        result = a.toString();
-        console.log();
+        c = a + b;
         break;
       case `-`:
-        a = parseInt(arg1) - parseInt(arg2);
-        result = a.toString();
-
+        c = a - b;
         break;
       case `*`:
-        a = parseInt(arg1) * parseInt(arg2);
-        result = a.toString();
-
+        c = a * b;
         break;
       case `/`:
-        a = parseInt(arg1) / parseInt(arg2);
-        result = a.toString();
-
+        c = a / b;
         break;
     }
   }
+  console.log(`arg1 (a) is ${a},result  (arg2) is ${b}, c is currently ${c}`);
+  result = c.toString();
 }
+
+// }
 
 function reset() {
   result = "";
@@ -57,19 +61,12 @@ function reset() {
 
 //UI functions
 
-const showOperand = () => {
-  document.getElementById("operand").innerHTML = operand;
+const showResult = () => {
+  showUi(arg1_ui, "");
+  showUi(operand_ui, "");
+  showUi(result_ui, result);
 };
 
-const showResult = () => {
-  document.getElementById("arg1").innerHTML = "";
-  document.getElementById("arg2").innerHTML = "";
-  document.getElementById("operand").innerHTML = "";
-  document.getElementById("result").innerHTML = result;
-};
-const showArg1 = () => {
-  document.getElementById("arg1").innerHTML = arg1;
-};
-const showArg2 = () => {
-  document.getElementById("arg2").innerHTML = arg2;
+const showUi = (ui, value) => {
+  ui.innerHTML = value;
 };
