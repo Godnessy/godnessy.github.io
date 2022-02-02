@@ -1,3 +1,4 @@
+/* eslint-disable no-debugger */
 'use strict';
 let arg1 = '';
 let arg2 = '';
@@ -11,25 +12,30 @@ const arg2_ui = document.getElementById('arg2');
 const result_ui = document.getElementById('result');
 const operand_ui = document.getElementById('operand');
 
-document.getElementsByName('operationBtn').forEach((a) => {
+document.querySelectorAll('.operationBtn').forEach((a) => {
   a.addEventListener('click', (a) => {
     a.target.textContent === 'C' ? reset() : showResult();
   });
 });
 
-document.getElementsByName('numberBtn').forEach((a) => {
+document.querySelectorAll('.numberBtn').forEach((a) => {
   a.addEventListener('click', (a) => {
     calc(a.target.textContent);
   });
 });
 
-document.getElementsByName('operandBtn').forEach((a) => {
+document.querySelectorAll('.operandBtn').forEach((a) => {
   a.addEventListener('click', (a) => {
     operator(a.target.textContent);
   });
 });
 
 function calc(num) {
+  // if (arg2 !== isNaN) {
+  //   arg2 = '0';
+  //   arg2 += num;
+  //   showUi(arg2_ui, arg2);
+  // } else
   if (operand === null) {
     arg1 += num;
     showUi(arg1_ui, arg1);
@@ -41,30 +47,23 @@ function calc(num) {
   }
 }
 
+const operatorMap = {
+  '+': (a, b) => a + b,
+  '-': (a, b) => a - b,
+  '*': (a, b) => a * b,
+  '/': (a, b) => a / b,
+};
+
 function operator(sign) {
   operand = sign;
   showUi(operand_ui, operand);
   let a = parseInt(arg1);
   let b = parseInt(arg2);
   let c = 0;
-  switch (sign) {
-    case '+':
-      c = a + b;
-      break;
-    case '-':
-      c = a - b;
-      break;
-    case '*':
-      c = a * b;
-      break;
-    case '/':
-      c = a / b;
-      break;
-    // }
-  }
-  result = c.toString();
+  const operation = operatorMap[sign];
+  result = String(operation(a, b));
+
   console.log(`arg1 (a) is ${a},arg2 (b) is ${b}, c is currently ${c}`);
-  return result;
 }
 
 // }
