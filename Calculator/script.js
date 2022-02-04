@@ -1,5 +1,6 @@
 /* eslint-disable no-debugger */
 'use strict';
+
 let arg1 = '';
 let arg2 = '';
 let result = '';
@@ -11,12 +12,6 @@ const arg1_ui = document.getElementById('arg1');
 const arg2_ui = document.getElementById('arg2');
 const result_ui = document.getElementById('result');
 const operand_ui = document.getElementById('operand');
-
-document.querySelectorAll('.operationBtn').forEach((a) => {
-  a.addEventListener('click', (a) => {
-    a.target.textContent === 'C' ? reset() : showResult();
-  });
-});
 
 document.querySelectorAll('.numberBtn').forEach((a) => {
   a.addEventListener('click', (a) => {
@@ -31,11 +26,6 @@ document.querySelectorAll('.operandBtn').forEach((a) => {
 });
 
 function calc(num) {
-  // if (arg2 !== isNaN) {
-  //   arg2 = '0';
-  //   arg2 += num;
-  //   showUi(arg2_ui, arg2);
-  // } else
   if (operand === null) {
     arg1 += num;
     showUi(arg1_ui, arg1);
@@ -56,20 +46,20 @@ const operatorMap = {
 
 function operator(sign) {
   operand = sign;
-  showUi(operand_ui, operand);
-  let a = parseInt(arg1);
-  let b = parseInt(arg2);
-  let c = 0;
-  const operation = operatorMap[sign];
-  result = String(operation(a, b));
+  showUi(operand_ui, sign);
+  if (arg2 === '') return;
+  const int1 = parseInt(arg1);
+  const int2 = parseInt(arg2);
+  const func = operatorMap[sign];
+  result = func(int1, int2);
 
-  console.log(`arg1 (a) is ${a},arg2 (b) is ${b}, c is currently ${c}`);
+  console.log(
+    `arg1 (a) is ${int1},arg2 (b) is ${int2}, c is currently ${result}, operand is ${operand}`
+  );
+  return result;
 }
 
-// }
-
-// eslint-disable-next-line no-unused-vars
-
+document.getElementById('reset').onclick = reset;
 function reset() {
   result = '';
   arg1 = '';
@@ -84,10 +74,18 @@ function reset() {
 //UI functions
 
 // eslint-disable-next-line no-unused-vars
+document.getElementById('equals').onclick = showResult;
+
 function showResult() {
   operator(operand);
+  console.log(
+    `arg1 (a) is ${arg1},arg2 (b) is ${arg2}, c is currently ${result}, operand is ${operand}`
+  );
+  operand = null;
   showUi(arg1_ui, '');
   showUi(arg2_ui, '');
   showUi(operand_ui, '');
   showUi(result_ui, result);
+  arg1 = result;
+  arg2 = '';
 }
