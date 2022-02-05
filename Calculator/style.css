@@ -10,9 +10,9 @@ button {
   border: 1px solid #18ab29;
   display: inline-block;
   cursor: pointer;
+  font-size: 30px;
   color: #ffffff;
   font-family: Arial;
-  font-size: 30px;
   padding: 20px 14px;
   text-decoration: none;
   text-shadow: 0px 1px 0px #2f6627;
@@ -25,7 +25,7 @@ button:active {
 
 #equals {
   grid-column: 1 / 4;
-  grid-row: 7;
+  grid-row: 8;
 }
 #resultBox {
   display: flex;
@@ -41,4 +41,8 @@ button:active {
 .historyBox {
   grid-column: 4/5;
   grid-row: 1/-1;
+}
+
+.resetHistory {
+  font-size: 17px;
 }

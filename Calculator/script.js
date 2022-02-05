@@ -4,7 +4,7 @@ let arg1 = '';
 let arg2 = '';
 let result = '';
 let operand = null;
-const historyBox = [];
+let historyBox = [];
 const showUi = (ui, value) => {
   ui.innerHTML = value;
 };
@@ -32,11 +32,9 @@ function calc(num) {
   if (operand === null) {
     arg1 += num;
     showUi(arg1_ui, arg1);
-    console.log(`arg1 is ${arg1} and is ${typeof arg1}`);
   } else {
     arg2 += num;
     showUi(arg2_ui, arg2);
-    console.log(`arg2 is ${arg2} and is ${typeof arg2}`);
   }
 }
 
@@ -55,7 +53,7 @@ function operator(sign) {
   const int2 = parseInt(arg2);
   const func = operatorMap[sign];
   result = func(int1, int2);
-
+  recordHistory(result);
   return result;
 }
 
@@ -69,18 +67,22 @@ function reset() {
   showUi(result_ui, '');
   showUi(arg2_ui, arg2);
   showUi(operand_ui, null);
-  recordHistory(result);
 }
 
+document.getElementById('history').onclick = () => {
+  historyBox = [];
+  showUi(history_ui, `Result History: ${historyBox} `);
+};
+
 function recordHistory() {
-  let history = (document.querySelector('.historyBox').value = result);
-  document.querySelector('.historyBox').innerHTML = history;
-  historyBox.push[result];
+  historyBox.push(result);
+  showUi(history_ui, `Result History: ${historyBox}`);
 }
 
 //UI functions
 document.getElementById('equals').onclick = showResult;
 function showResult() {
+  showUi(history_ui, `Result History: ${historyBox} `);
   operator(operand);
   operand = null;
   showUi(arg1_ui, '');
@@ -89,5 +91,4 @@ function showResult() {
   showUi(result_ui, result);
   arg1 = result;
   arg2 = '';
-  showUi(history_ui, `Result: ${result}`);
 }
