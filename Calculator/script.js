@@ -80,7 +80,6 @@ function recordHistory() {
 
 //UI functions
 document.getElementById('equals').onclick = showResult;
-
 function showResult() {
   operator(operand);
   operand = null;
