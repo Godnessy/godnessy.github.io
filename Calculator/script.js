@@ -17,24 +17,26 @@ const history_ui = document.querySelector('.historyBox');
 //Number button selector
 document.querySelectorAll('.numberBtn').forEach((a) => {
   a.addEventListener('click', (a) => {
-    calc(a.target.textContent);
+    addArgs(a.target.textContent);
   });
 });
 
 //Operator button selector
 document.querySelectorAll('.operandBtn').forEach((a) => {
   a.addEventListener('click', (a) => {
-    operator(a.target.textContent);
+    calculate(a.target.textContent);
   });
 });
 
-function calc(num) {
+function addArgs(num) {
   if (operand === null) {
     arg1 += num;
     showUi(arg1_ui, arg1);
+    console.log(`arg1 is ${arg1}`);
   } else {
     arg2 += num;
     showUi(arg2_ui, arg2);
+    console.log(`arg2 is ${arg2}`);
   }
 }
 
@@ -45,7 +47,7 @@ const operatorMap = {
   '/': (a, b) => a / b,
 };
 
-function operator(sign) {
+function calculate(sign) {
   operand = sign;
   showUi(operand_ui, sign);
   if (arg2 === '') return;
@@ -71,19 +73,19 @@ function reset() {
 
 document.getElementById('history').onclick = () => {
   historyBox = '';
-  showUi(history_ui, `Result History: ${historyBox} `);
+  showUi(history_ui, `${historyBox} `);
 };
 
 function recordHistory() {
   historyBox = `${(historyBox += result)}, `;
-  showUi(history_ui, `Result History: ${historyBox}`);
+  showUi(history_ui, `${historyBox}`);
 }
 
 //UI functions
 document.getElementById('equals').onclick = showResult;
 function showResult() {
-  showUi(history_ui, `Result History: ${historyBox} `);
-  operator(operand);
+  showUi(history_ui, `${historyBox} `);
+  calculate(operand);
   operand = null;
   showUi(arg1_ui, '');
   showUi(arg2_ui, '');

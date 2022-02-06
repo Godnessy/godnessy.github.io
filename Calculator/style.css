@@ -1,8 +1,9 @@
 .container {
   display: grid;
-  width: 50%;
-  grid-template-columns: 3fr 3fr 3fr 3fr;
-  grid-template-rows: 100px 70px 70px 70px 70px 70px 70px;
+  width: 100%;
+  height: auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 button {
@@ -42,9 +43,15 @@ button:active {
 .historyBox {
   font-size: 1.5em;
   grid-column: 4/5;
-  grid-row: 1/-1;
+  grid-row: 2/-1;
+  font-size: 2em;
 }
 
 .resetHistory {
-  font-size: 17px;
+  font-size: 1.3em;
+}
+
+.historyTitle {
+  font-size: 2.5em;
+  text-decoration: underline;
 }
