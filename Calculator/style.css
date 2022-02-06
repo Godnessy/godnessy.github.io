@@ -3,7 +3,7 @@
   width: 100%;
   height: auto;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 button {
@@ -32,7 +32,7 @@ button:active {
 #resultBox {
   display: flex;
   border: 1px solid;
-  font-size: 70px;
+  font-size: 4em;
   grid-column: 1 / 4;
 }
 
@@ -44,7 +44,9 @@ button:active {
   font-size: 1.5em;
   grid-column: 4/5;
   grid-row: 2/-1;
-  font-size: 2em;
+  font-size: 3em;
+  border: solid;
+  border-top: none;
 }
 
 .resetHistory {
@@ -54,4 +56,25 @@ button:active {
 .historyTitle {
   font-size: 2.5em;
   text-decoration: underline;
+  border: solid;
+  border-bottom: none;
+}
+
+@media (max-width: 1450px) {
+  .container {
+    width: 80%;
+    height: auto;
+    align-content: center;
+  }
+
+  .historyBox {
+    font-size: 3em;
+  }
+}
+
+@media (max-width: 2500px) {
+  .container {
+    width: 80%;
+    align-content: center;
+  }
 }
