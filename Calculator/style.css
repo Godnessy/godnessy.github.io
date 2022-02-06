@@ -27,6 +27,7 @@ button:active {
   grid-column: 1 / 4;
   grid-row: 8;
 }
+
 #resultBox {
   display: flex;
   border: 1px solid;
@@ -39,6 +40,7 @@ button:active {
 }
 
 .historyBox {
+  font-size: 1.5em;
   grid-column: 4/5;
   grid-row: 1/-1;
 }

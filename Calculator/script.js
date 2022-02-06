@@ -4,7 +4,7 @@ let arg1 = '';
 let arg2 = '';
 let result = '';
 let operand = null;
-let historyBox = [];
+let historyBox = '';
 const showUi = (ui, value) => {
   ui.innerHTML = value;
 };
@@ -70,12 +70,12 @@ function reset() {
 }
 
 document.getElementById('history').onclick = () => {
-  historyBox = [];
+  historyBox = '';
   showUi(history_ui, `Result History: ${historyBox} `);
 };
 
 function recordHistory() {
-  historyBox.push(result);
+  historyBox = `${(historyBox += result)}, `;
   showUi(history_ui, `Result History: ${historyBox}`);
 }
 
