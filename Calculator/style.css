@@ -1,7 +1,16 @@
 .container {
+  width: 90%;
+  height: 50em;
   display: grid;
-  width: 100%;
-  height: auto;
+  grid-template-areas:
+    'result result result history'
+    'one two three history1'
+    'four five six history1'
+    'seven eight nine history1'
+    'btnZero plus minus history1'
+    'multiply divide resetHistory history1'
+    'reset reset reset history1'
+    'equals equals equals history1';
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
@@ -11,10 +20,10 @@ button {
   border: 1px solid #18ab29;
   display: inline-block;
   cursor: pointer;
-  font-size: 30px;
+  font-size: 1.5em;
   color: #ffffff;
   font-family: Arial;
-  padding: 20px 14px;
+  padding: 1.25em 0.875em;
   text-decoration: none;
   text-shadow: 0px 1px 0px #2f6627;
 }
@@ -24,57 +33,86 @@ button:active {
   top: 1px;
 }
 
-#equals {
-  grid-column: 1 / 4;
-  grid-row: 8;
-}
-
 #resultBox {
   display: flex;
   border: 1px solid;
   font-size: 4em;
-  grid-column: 1 / 4;
-}
-
-#reset {
-  grid-column: 1/4;
-}
-
-.historyBox {
-  font-size: 1.5em;
-  grid-column: 4/5;
-  grid-row: 2/-1;
-  font-size: 3em;
-  border: solid;
-  border-top: none;
-}
-
-.resetHistory {
-  font-size: 1.3em;
+  grid-area: result;
 }
 
 .historyTitle {
+  grid-area: history;
+  font-size: 2em;
+}
+.historyBox {
+  grid-area: history1;
   font-size: 2.5em;
-  text-decoration: underline;
-  border: solid;
-  border-bottom: none;
 }
 
-@media (max-width: 1450px) {
-  .container {
-    width: 80%;
-    height: auto;
-    align-content: center;
-  }
-
-  .historyBox {
-    font-size: 3em;
-  }
+#equals {
+  grid-area: equals;
 }
 
-@media (max-width: 2500px) {
-  .container {
-    width: 80%;
-    align-content: center;
-  }
+#reset {
+  grid-area: reset;
+}
+
+#button1 {
+  grid-area: one;
+}
+
+#button2 {
+  grid-area: two;
+}
+
+#button3 {
+  grid-area: three;
+}
+
+#button4 {
+  grid-area: four;
+}
+
+#button5 {
+  grid-area: five;
+}
+
+#button6 {
+  grid-area: six;
+}
+
+#button7 {
+  grid-area: seven;
+}
+
+#button8 {
+  grid-area: eight;
+}
+
+#button9 {
+  grid-area: nine;
+}
+
+#button0 {
+  grid-area: btnZero;
+}
+
+#plus {
+  grid-area: plus;
+}
+
+#minus {
+  grid-area: minus;
+}
+
+#multiply {
+  grid-area: multiply;
+}
+
+#divide {
+  grid-area: divide;
+}
+
+#history {
+  grid-area: resetHistory;
 }
