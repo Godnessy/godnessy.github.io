@@ -2,7 +2,6 @@
 
 let arg1 = '';
 let arg2 = '';
-let result = '';
 let operand = null;
 let historyBox = '';
 const showUi = (ui, value) => {
@@ -51,17 +50,14 @@ function calculate(sign) {
   operand = sign;
   showUi(operand_ui, sign);
   if (arg2 === '') return;
-  const int1 = parseInt(arg1);
-  const int2 = parseInt(arg2);
+  const int1 = Number(arg1);
+  const int2 = Number(arg2);
   const func = operatorMap[sign];
-  result = func(int1, int2);
-  recordHistory(result);
-  return result;
+  return func(int1, int2);
 }
 
 document.getElementById('reset').onclick = reset;
 function reset() {
-  result = '';
   arg1 = '';
   arg2 = '';
   operand = null;
@@ -76,7 +72,7 @@ document.getElementById('history').onclick = () => {
   showUi(history_ui, `${historyBox} `);
 };
 
-function recordHistory() {
+function recordHistory(result) {
   historyBox = `${(historyBox += result)}, `;
   showUi(history_ui, `${historyBox}`);
 }
@@ -84,8 +80,9 @@ function recordHistory() {
 //UI functions
 document.getElementById('equals').onclick = showResult;
 function showResult() {
+  const result = calculate(operand);
+  recordHistory(result);
   showUi(history_ui, `${historyBox} `);
-  calculate(operand);
   operand = null;
   showUi(arg1_ui, '');
   showUi(arg2_ui, '');

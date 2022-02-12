@@ -1,31 +1,59 @@
+body {
+  background-color: #2f3945;
+}
 .container {
-  width: 90%;
-  height: 50em;
+  position: relative;
+  left: 40%;
+  width: 30%;
+  border-radius: 5%;
+  height: auto;
+  background-color: #c0c0c0;
   display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 3fr;
   grid-template-areas:
-    'result result result history'
-    'one two three history1'
-    'four five six history1'
-    'seven eight nine history1'
-    'btnZero plus minus history1'
-    'multiply divide resetHistory history1'
-    'reset reset reset history1'
-    'equals equals equals history1';
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    'result result result result result'
+    'seven eight nine divide reset'
+    'four five six multiply equals'
+    'one two three minus equals'
+    'btnZero plusMinus dot plus equals'
+    'Hist Hist Hist Hist Hist';
 }
 
-button {
-  background-color: #2969d9;
-  border: 1px solid #18ab29;
+.button {
+  box-shadow: 3px 3px 0px -2px #4f7544;
+  background: linear-gradient(to bottom, #f0f0f0 5%, #b5b5b5 100%);
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  border: 1px solid #ffffff;
   display: inline-block;
   cursor: pointer;
-  font-size: 1.5em;
-  color: #ffffff;
+  color: #000000;
   font-family: Arial;
-  padding: 1.25em 0.875em;
+  font-size: 2em;
+  font-weight: bold;
+  padding: 12px 24px;
   text-decoration: none;
-  text-shadow: 0px 1px 0px #2f6627;
+}
+.Button:hover {
+  background: linear-gradient(to bottom, #b5b5b5 5%, #f0f0f0 100%);
+  background-color: #b5b5b5;
+}
+.Button:active {
+  box-shadow: 3px 3px 0px -2px #4f7544;
+  background: linear-gradient(to bottom, #c0cfd6 5%, #6effec 100%);
+  background-color: #c0cfd6;
+  border-radius: 5px;
+  border: 1px solid #ffffff;
+  display: inline-block;
+  cursor: pointer;
+  color: #000000;
+  font-family: Arial;
+  font-size: 17px;
+  font-weight: bold;
+  padding: 12px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 7px #2f6627;
 }
 
 button:active {
@@ -36,16 +64,12 @@ button:active {
 #resultBox {
   display: flex;
   border: 1px solid;
-  font-size: 4em;
+  font-size: 3em;
   grid-area: result;
+  background-color: white;
 }
 
-.historyTitle {
-  grid-area: history;
-  font-size: 2em;
-}
 .historyBox {
-  grid-area: history1;
   font-size: 2.5em;
 }
 
@@ -57,6 +81,13 @@ button:active {
   grid-area: reset;
 }
 
+#dot {
+  grid-area: dot;
+}
+
+#plusMinus {
+  grid-area: plusMinus;
+}
 #button1 {
   grid-area: one;
 }
@@ -113,6 +144,12 @@ button:active {
   grid-area: divide;
 }
 
-#history {
-  grid-area: resetHistory;
+@media screen and (max-width: 500px) {
+  body {
+    background-color: red;
+  }
+
+  .button {
+    color: red;
+  }
 }
