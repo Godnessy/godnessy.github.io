@@ -27,6 +27,26 @@ document.querySelectorAll('.operandBtn').forEach((a) => {
   });
 });
 
+//-+ button function^
+document.getElementById('plusMinus').onclick = plusMinus;
+function plusMinus() {
+  if (arg2 === '') {
+    if (arg1[0] === '-') {
+      arg1 = arg1.substring(1);
+      showUi(arg1_ui, arg1);
+    } else {
+      arg1 = `-${arg1}`;
+      showUi(arg1_ui, arg1);
+    }
+  } else if (arg2[0] != '-') {
+    arg2 = `-${arg2}`;
+    showUi(arg2_ui, arg2);
+  } else {
+    arg2 = arg2.substring(1);
+    showUi(arg2_ui, arg2);
+  }
+}
+
 function addArgs(num) {
   if (operand === null) {
     arg1 += num;
@@ -42,7 +62,7 @@ function addArgs(num) {
 const operatorMap = {
   '+': (a, b) => a + b,
   '-': (a, b) => a - b,
-  '*': (a, b) => a * b,
+  X: (a, b) => a * b,
   '/': (a, b) => a / b,
 };
 
@@ -67,10 +87,10 @@ function reset() {
   showUi(operand_ui, null);
 }
 
-document.getElementById('history').onclick = () => {
-  historyBox = '';
-  showUi(history_ui, `${historyBox} `);
-};
+// document.getElementById('history').onclick = () => {
+//   historyBox = '';
+//   showUi(history_ui, `${historyBox} `);
+// };
 
 function recordHistory(result) {
   historyBox = `${(historyBox += result)}, `;
