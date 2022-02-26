@@ -1,6 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap');
 
 body {
   margin: 0;
@@ -16,19 +16,19 @@ body {
   display: none;
 }
 h1 {
-  font-family: "Varela Round", sans-serif;
+  font-family: 'Varela Round', sans-serif;
   font-size: 2.125em;
   color: #c69c6d;
 }
 
 h2 {
-  font-family: "Assistant - Regular";
+  font-family: 'Assistant - Regular';
   font-size: 1.3125em;
   color: #c69c6d;
 }
 
 h3 {
-  font-family: "Assistant";
+  font-family: 'Assistant';
   font-weight: 600;
   font-size: 1.3125em;
   color: black;
@@ -70,7 +70,7 @@ h3 {
   font-size: 1.3em;
   background-color: rgba(255, 255, 255, 0);
   box-sizing: border-box;
-  font-family: "Playfair Display SC", sans-serif;
+  font-family: 'Playfair Display SC', sans-serif;
   font-weight: 700;
   color: #333333;
   text-align: center;
@@ -81,7 +81,7 @@ h3 {
   border: 4px solid #c69c6d;
   background-color: rgba(255, 255, 255, 0);
   box-sizing: border-box;
-  font-family: "Varela Round", sans-serif;
+  font-family: 'Varela Round', sans-serif;
   color: #c69c6d;
   background-color: #c69c6d;
   text-align: center;
@@ -130,7 +130,7 @@ h3 {
 }
 
 .aboutUsText {
-  font-family: "Assistant";
+  font-family: 'Assistant';
   font-size: 1em;
   padding-right: 1.25em;
 }
@@ -156,7 +156,7 @@ h3 {
 }
 
 .artistDescription {
-  font-family: "Assistant";
+  font-family: 'Assistant';
   font-size: 1em;
 }
 
@@ -201,10 +201,10 @@ h3 {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 9.5625em 7.0625em 5.125em 3.5625em;
   grid-template-areas:
-    "social social"
-    "info info"
-    "navigate call"
-    "footer footer";
+    'social social'
+    'info info'
+    'navigate call'
+    'footer footer';
 }
 .social {
   position: relative;
@@ -222,7 +222,7 @@ h3 {
   flex-direction: row;
   justify-content: space-between;
   position: relative;
-  font-family: "Assistant", sans-serif;
+  font-family: 'Assistant', sans-serif;
   font-size: 0.8125em;
 }
 .address {
@@ -265,7 +265,7 @@ h3 {
   bottom: 1em;
 }
 
-@media screen and (max-width: 1441px) {
+@media screen and (max-width: 2500px) {
   .header {
     background-color: white;
     display: flex;
@@ -338,7 +338,7 @@ h3 {
     left: 33.5%;
     bottom: 35%;
     font-size: 2.5em;
-    font-family: "Assistant";
+    font-family: 'Assistant';
     font-weight: 200;
     text-align: center;
   }
@@ -390,7 +390,7 @@ h3 {
   .aboutVladi,
   .aboutTanya,
   .aboutIvan {
-    margin-left: 10em;
+    margin: 2em;
   }
 
   .artistDescription {
@@ -414,10 +414,10 @@ h3 {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 9.5625em 7.0625em 5.125em 3.5625em;
     grid-template-areas:
-      "social social"
-      "info info"
-      "navigate call"
-      "footer footer";
+      'social social'
+      'info info'
+      'navigate call'
+      'footer footer';
   }
   .social {
     background-color: #ffffff;
@@ -444,10 +444,10 @@ h3 {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 9.5625em 15em 12em 3.5625em;
     grid-template-areas:
-      "social social"
-      "info info"
-      "navigate call"
-      "footer footer";
+      'social social'
+      'info info'
+      'navigate call'
+      'footer footer';
   }
   .address {
     font-size: 2em;
@@ -497,7 +497,7 @@ h3 {
   }
 
   a:link {
-    font-family: "ariel";
+    font-family: 'ariel';
     text-decoration: underline;
     text-decoration-skip: none;
     text-decoration-color: #c69c6d;
@@ -518,6 +518,11 @@ h3 {
   }
 }
 
+@media screen and (max-width: 800) {
+  .aboutIvan {
+    margin-left: 0;
+  }
+}
 @media screen and (max-width: 500px) {
   .nagivateSymbol {
     width: 1.2em;
@@ -570,10 +575,10 @@ h3 {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 9.5625em 7.0625em 5.125em 3.5625em;
     grid-template-areas:
-      "social social"
-      "info info"
-      "navigate call"
-      "footer footer";
+      'social social'
+      'info info'
+      'navigate call'
+      'footer footer';
   }
   .description {
     top: 0em;
@@ -641,7 +646,7 @@ h3 {
     font-size: 1.3em;
     background-color: rgba(255, 255, 255, 0);
     box-sizing: border-box;
-    font-family: "Playfair Display SC", sans-serif;
+    font-family: 'Playfair Display SC', sans-serif;
     font-weight: 700;
     color: #333333;
     text-align: center;
@@ -669,7 +674,7 @@ h3 {
     border: 4px solid #c69c6d;
     background-color: #c69c6d;
     box-sizing: border-box;
-    font-family: "Varela Round", sans-serif;
+    font-family: 'Varela Round', sans-serif;
     color: #ffffff;
     text-align: center;
     line-height: normal;
@@ -688,7 +693,7 @@ h3 {
     padding-top: 0.2em;
     box-sizing: border-box;
     font-size: 1em;
-    font-family: "Varela Round", sans-serif;
+    font-family: 'Varela Round', sans-serif;
     color: rgba(255, 255, 255, 0.87);
     background-color: #c69c6d;
     color: #fff;
@@ -708,7 +713,7 @@ h3 {
     width: 22.4375em;
     height: auto;
     font-size: 1.875em;
-    font-family: "Varela round";
+    font-family: 'Varela round';
     font-size: 2.125em;
     color: white;
     text-align: center;
@@ -722,7 +727,7 @@ h3 {
     width: 22.4375em;
     height: 3.625em;
     font-size: 1.3125em;
-    font-family: "Assistant";
+    font-family: 'Assistant';
     font-weight: 200;
     text-align: center;
     color: #c69c6d;
@@ -740,7 +745,7 @@ h3 {
     border-radius: 10%;
     padding-top: 0.2em;
     box-sizing: border-box;
-    font-family: "Varela Round", sans-serif;
+    font-family: 'Varela Round', sans-serif;
     color: rgba(255, 255, 255, 0.87);
     background-color: #c69c6d;
     color: #fff;
@@ -751,7 +756,7 @@ h3 {
     flex-wrap: wrap;
     position: relative;
     top: 5em;
-    font-family: "Assistant", sans-serif;
+    font-family: 'Assistant', sans-serif;
     color: rgba(255, 255, 255, 0.87);
     font-size: 0.7em;
   }
@@ -801,7 +806,7 @@ h3 {
   }
 
   a:link {
-    font-family: "ariel";
+    font-family: 'ariel';
     text-decoration: underline;
     text-decoration-skip: none;
     text-decoration-color: #c69c6d;
@@ -864,7 +869,7 @@ h3 {
     font-size: 1.3em;
     background-color: rgba(255, 255, 255, 0);
     box-sizing: border-box;
-    font-family: "Playfair Display SC", sans-serif;
+    font-family: 'Playfair Display SC', sans-serif;
     font-weight: 700;
     color: #333333;
     text-align: center;
@@ -875,7 +880,7 @@ h3 {
     border: 4px solid #c69c6d;
     background-color: rgba(255, 255, 255, 0);
     box-sizing: border-box;
-    font-family: "Varela Round", sans-serif;
+    font-family: 'Varela Round', sans-serif;
     color: #c69c6d;
     border-radius: 10%;
     text-align: center;
@@ -907,7 +912,7 @@ h3 {
     width: 22.4375em;
     height: auto;
     font-size: 1.875em;
-    font-family: "Varela round";
+    font-family: 'Varela round';
     font-size: 2.125em;
     color: white;
     text-align: center;
@@ -921,7 +926,7 @@ h3 {
     width: 22.4375em;
     height: 3.625em;
     font-size: 1.3125em;
-    font-family: "Assistant";
+    font-family: 'Assistant';
     font-weight: 200;
     text-align: center;
     color: #c69c6d;
@@ -938,7 +943,7 @@ h3 {
     border-radius: 10%;
     padding-top: 0.2em;
     box-sizing: border-box;
-    font-family: "Varela Round", sans-serif;
+    font-family: 'Varela Round', sans-serif;
     color: rgba(255, 255, 255, 0.87);
     background-color: #c69c6d;
     color: #fff;
@@ -951,7 +956,7 @@ h3 {
     padding-top: 1em;
     font-size: 1;
     top: 5em;
-    font-family: "Assistant", sans-serif;
+    font-family: 'Assistant', sans-serif;
     color: rgba(255, 255, 255, 0.87);
   }
 
@@ -1019,7 +1024,7 @@ h3 {
     width: 22.4375em;
     height: auto;
     font-size: 1.875em;
-    font-family: "Varela round";
+    font-family: 'Varela round';
     font-size: 2.125em;
     color: white;
     text-align: center;
@@ -1032,7 +1037,7 @@ h3 {
     width: 22.4375em;
     height: 3.625em;
     font-size: 1.3125em;
-    font-family: "Assistant";
+    font-family: 'Assistant';
     font-weight: 200;
     text-align: center;
     color: #c69c6d;
@@ -1049,7 +1054,7 @@ h3 {
     border-radius: 10%;
     padding-top: 0.2em;
     box-sizing: border-box;
-    font-family: "Varela Round", sans-serif;
+    font-family: 'Varela Round', sans-serif;
     color: rgba(255, 255, 255, 0.87);
     background-color: #c69c6d;
     color: #fff;
