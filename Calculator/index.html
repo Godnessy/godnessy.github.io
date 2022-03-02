@@ -6,33 +6,47 @@
 
   <body>
     <div class="container">
-      <div class="historyBox"></div>
-
       <div id="resultBox">
         <span> <div id="result"></div> </span>
         <span><div id="arg1"></div></span>
         <span><div id="operand"></div></span>
         <span><div id="arg2"></div></span>
       </div>
-      <button class="numberBtn button" id="button1">1</button>
-      <button class="numberBtn button" id="button2">2</button>
-      <button class="numberBtn button" id="button3">3</button>
-      <button class="numberBtn button" id="button4">4</button>
-      <button class="numberBtn button" id="button5">5</button>
-      <button class="numberBtn button" id="button6">6</button>
-      <button class="numberBtn button" id="button7">7</button>
-      <button class="numberBtn button" id="button8">8</button>
-      <button class="numberBtn button" id="button9">9</button>
-      <button class="numberBtn button" id="button0">0</button>
-      <button class="operandBtn button" id="plus">+</button>
-      <button class="operandBtn button" id="minus">-</button>
-      <button class="operandBtn button" id="multiply">X</button>
-      <button class="operandBtn button" id="divide">÷</button>
-      <button class="operationBtn button" id="equals">=</button>
-      <button class="operationBtn button" id="plusMinus">±</button>
-      <button class="numberBtn button" id="dot">.</button>
-      <button class="operationBtn button" id="reset">C</button>
+      <div class="buttonContainer">
+        <button class="numberBtn button" id="button1">1</button>
+        <button class="numberBtn button" id="button2">2</button>
+        <button class="numberBtn button" id="button3">3</button>
+        <button class="numberBtn button" id="button4">4</button>
+        <button class="numberBtn button" id="button5">5</button>
+        <button class="numberBtn button" id="button6">6</button>
+        <button class="numberBtn button" id="button7">7</button>
+        <button class="numberBtn button" id="button8">8</button>
+        <button class="numberBtn button" id="button9">9</button>
+        <button class="numberBtn button" id="button0">0</button>
+        <button class="operandBtn button" id="plus">+</button>
+        <button class="operandBtn button" id="minus">-</button>
+        <button class="operandBtn button" id="multiply">*</button>
+        <button class="operandBtn button" id="divide">÷</button>
+        <button class="operationBtn button" id="equals">=</button>
+        <button class="operationBtn button" id="plusMinus">±</button>
+        <button class="numberBtn button" id="dot">.</button>
+        <button class="operationBtn button" id="reset">C</button>
+        </div>
+        <div class="historyBtn">
+        <button class="hist" id="histDisp">Display/Hide History</div>
+        </div>
+      </div>
     </div>
+      <div id="historyContainer">
+        <h2 class="historyTitle">Clear history</h2>
+        <div class="historyBox">
+          <div id="clearHistory"></div>
+          <div id="history"></div>
+          <div id="historyCalc"></div>
+        </div>
+      </div>
+    
+ 
     <script src="./script.js"></script>
   </body>
 </html>
