@@ -4,7 +4,7 @@ let arg1 = '';
 let arg2 = '';
 let result = '';
 let operand = null;
-const historyBox = [];
+let historyBox = new Map();
 const showUi = (ui, value) => {
   ui.innerHTML = value;
 };
@@ -12,9 +12,18 @@ const arg1_ui = document.getElementById('arg1');
 const arg2_ui = document.getElementById('arg2');
 const result_ui = document.getElementById('result');
 const operand_ui = document.getElementById('operand');
-const history_ui = document.querySelector('.historyBox');
+const history_ui = document.getElementById('history');
+const historyCalc_ui = document.getElementById('historyCalc');
 
 // History display/hide
+
+// function clearHistory() {
+//   historyBox.clear();
+//   showUi(history_ui, '');
+//   showUi(historyCalc_ui, '');
+//   console.log('clear history123');
+// }
+// document.getElementById('deleteHist').onclick = clearHistory();
 
 document.getElementById('histDisp').onclick = showHide;
 
@@ -38,6 +47,7 @@ document.querySelectorAll('.operandBtn').forEach((a) => {
   });
 });
 
+//Adding numbers to calculate
 function calc(num) {
   if (operand === null) {
     arg1 += num;
@@ -48,6 +58,7 @@ function calc(num) {
   }
 }
 
+//What each operator does
 const operatorMap = {
   '+': (a, b) => a + b,
   '-': (a, b) => a - b,
@@ -55,6 +66,7 @@ const operatorMap = {
   '÷': (a, b) => a / b,
 };
 
+//working the opeartor on the numbers set
 function operator(sign) {
   operand = sign;
   showUi(operand_ui, sign);
@@ -77,13 +89,18 @@ function reset() {
   showUi(result_ui, '');
   showUi(arg2_ui, arg2);
   showUi(operand_ui, null);
-  // recordHistory(result);
 }
 
-function recordHistory() {
-  let history = (document.querySelector('.historyBox').value = result);
-  historyBox.push(history);
-  document.querySelector('.historyBox').innerHTML = historyBox;
+//record the args, operator and result to be saved into history calc map
+function recordHistory(arg1, operator, arg2, result) {
+  let calc = String(`${arg1} ${operator} ${arg2}`);
+  historyBox.set(result, calc);
+  showHistory(result, calc);
+}
+
+function showHistory(result, calc) {
+  showUi(history_ui, `${result} <br>`);
+  showUi(historyCalc_ui, `=  ${calc}`);
 }
 
 //UI functions
@@ -91,13 +108,12 @@ document.getElementById('equals').onclick = showResult;
 
 function showResult() {
   operator(operand);
+  recordHistory(arg1, operand, arg2, result);
   operand = null;
-  recordHistory(result);
   showUi(arg1_ui, '');
   showUi(arg2_ui, '');
   showUi(operand_ui, '');
   showUi(result_ui, result);
   arg1 = result;
   arg2 = '';
-  showUi(history_ui, historyBox);
 }

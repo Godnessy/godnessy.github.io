@@ -170,19 +170,26 @@ button:active {
   grid-template-rows: 1fr 5fr;
   grid-template-areas:
     'clear clear'
-    'result calc';
+    'calc result';
+  border-radius: 5%;
 }
 
 #deleteHist {
+  margin-top: 5px;
   width: 20%;
+  position: relative;
+  left: 5%;
 }
 
 #history {
   grid-area: calc;
+  padding-top: 5px;
+  border-bottom: solid 1px black;
 }
 
 #historyCalc {
   grid-area: result;
+  padding-top: 5px;
 }
 
 .historyBtn {
