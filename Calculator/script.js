@@ -20,7 +20,7 @@ document.getElementById('histDisp').onclick = showHide;
 
 function showHide() {
   document.getElementById('historyContainer').style.display == 'none'
-    ? (document.getElementById('historyContainer').style.display = 'block')
+    ? (document.getElementById('historyContainer').style.display = 'grid')
     : (document.getElementById('historyContainer').style.display = 'none');
 }
 
