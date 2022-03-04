@@ -33,8 +33,26 @@ function showHide() {
 }
 
 //trying to make keypresses work
-window.addEventListener('keyup', (e) => {
-  calc(e.key);
+const keyMap = {
+  1: () => calc(1),
+  2: () => calc(2),
+  3: () => calc(3),
+  4: () => calc(4),
+  5: () => calc(5),
+  6: () => calc(6),
+  7: () => calc(7),
+  8: () => calc(8),
+  9: () => calc(9),
+  0: () => calc(0),
+  '+': () => operator('+'),
+  '-': () => operator('-'),
+  '*': () => operator('*'),
+  '/': () => operator('/'),
+};
+
+window.addEventListener('keypress', (e) => {
+  console.log(e.key);
+  keyMap[e.key];
 });
 
 //Number button selector
@@ -54,6 +72,7 @@ document.querySelectorAll('.operandBtn').forEach((a) => {
 //Adding numbers to calculate
 function calc(num) {
   if (operand === null) {
+    console.log(num);
     arg1 += num;
     showUi(arg1_ui, arg1);
   } else {
