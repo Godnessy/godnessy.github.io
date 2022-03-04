@@ -95,12 +95,18 @@ function reset() {
 function recordHistory(arg1, operator, arg2, result) {
   let calc = String(`${arg1} ${operator} ${arg2}`);
   historyBox.set(result, calc);
-  showHistory(result, calc);
+  showHistory(historyBox);
 }
 
-function showHistory(result, calc) {
-  showUi(history_ui, `${result} <br>`);
-  showUi(historyCalc_ui, `=  ${calc}`);
+function showHistory(historyBox) {
+  let historyResults = [...historyBox.keys()]
+    .toString()
+    .split(',')
+    .join('<br>');
+
+  let historyCalc = [...historyBox.values()].toString().split(',').join('<br>');
+  showUi(history_ui, `${historyResults}`);
+  showUi(historyCalc_ui, `${historyCalc}`);
 }
 
 //UI functions
