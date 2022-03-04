@@ -1,5 +1,12 @@
 'use strict';
+/* TODO:
+1. Find a way to make the result box into input and attach keypress on change to it - Done
+2. find a way to interpert the change as Arg1/arg2/operator
+3. find way to change calc to accept numbers (get input from user*10 +input *10 etc etc and then /10 when input goes to operator)
+4. make all inputs and outputs intergers and not strings
 
+
+*/
 let arg1 = '';
 let arg2 = '';
 let result = '';
@@ -24,6 +31,11 @@ function showHide() {
     ? (document.getElementById('historyContainer').style.display = 'grid')
     : (document.getElementById('historyContainer').style.display = 'none');
 }
+
+//trying to make keypresses work
+window.addEventListener('keyup', (e) => {
+  calc(e.key);
+});
 
 //Number button selector
 document.querySelectorAll('.numberBtn').forEach((a) => {
@@ -106,6 +118,8 @@ function clearHistory() {
   showUi(history_ui, '');
   showUi(historyCalc_ui, '');
 }
+
+//Use values from history
 
 //UI functions
 document.getElementById('equals').onclick = showResult;
