@@ -17,14 +17,6 @@ const historyCalc_ui = document.getElementById('historyCalc');
 
 // History display/hide
 
-// function clearHistory() {
-//   historyBox.clear();
-//   showUi(history_ui, '');
-//   showUi(historyCalc_ui, '');
-//   console.log('clear history123');
-// }
-// document.getElementById('deleteHist').onclick = clearHistory();
-
 document.getElementById('histDisp').onclick = showHide;
 
 function showHide() {
@@ -107,6 +99,12 @@ function showHistory(historyBox) {
   let historyCalc = [...historyBox.values()].toString().split(',').join('<br>');
   showUi(history_ui, `${historyResults}`);
   showUi(historyCalc_ui, `${historyCalc}`);
+}
+document.getElementById('deleteHist').onclick = clearHistory;
+function clearHistory() {
+  historyBox.clear();
+  showUi(history_ui, '');
+  showUi(historyCalc_ui, '');
 }
 
 //UI functions
