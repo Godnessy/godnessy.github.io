@@ -1,7 +1,7 @@
 'use strict';
 /* TODO:
 1. Find a way to make the result box into input and attach keypress on change to it - Done
-2. find a way to interpert the change as Arg1/arg2/operator
+2. find a way to interpert the change as Arg1/arg2/operator - Done
 3. find way to change calc to accept numbers (get input from user*10 +input *10 etc etc and then /10 when input goes to operator)
 4. make all inputs and outputs intergers and not strings
 
@@ -33,26 +33,29 @@ function showHide() {
 }
 
 //trying to make keypresses work
-const keyMap = {
-  1: () => calc(1),
-  2: () => calc(2),
-  3: () => calc(3),
-  4: () => calc(4),
-  5: () => calc(5),
-  6: () => calc(6),
-  7: () => calc(7),
-  8: () => calc(8),
-  9: () => calc(9),
-  0: () => calc(0),
-  '+': () => operator('+'),
-  '-': () => operator('-'),
-  '*': () => operator('*'),
-  '/': () => operator('/'),
-};
+// const keyMap = {
+//   1: () => calc(1),
+//   2: () => calc(2),
+//   3: () => calc(3),
+//   4: () => calc(4),
+//   5: () => calc(5),
+//   6: () => calc(6),
+//   7: () => calc(7),
+//   8: () => calc(8),
+//   9: () => calc(9),
+//   0: () => calc(0),
+//   '+': () => operator('+'),
+//   '-': () => operator('-'),
+//   '*': () => operator('*'),
+//   '/': () => operator('/'),
+// };
+// let regex = /([0-9]+( [0-9]+)+) \+ - \* \//i;
 
 window.addEventListener('keypress', (e) => {
+  // let regex = /([0-9]+( [0-9]+)+) \+ - \* \//i;
+  let key = e.key;
   console.log(e.key);
-  keyMap[e.key];
+  Number.isInteger(Number(key)) ? calc(Number(key)) : operator(key);
 });
 
 //Number button selector
@@ -75,9 +78,11 @@ function calc(num) {
     console.log(num);
     arg1 += num;
     showUi(arg1_ui, arg1);
+    console.log(`arg 1 is ${arg1}`);
   } else {
     arg2 += num;
     showUi(arg2_ui, arg2);
+    console.log(`arg 2 is ${arg2}`);
   }
 }
 
@@ -92,6 +97,7 @@ const operatorMap = {
 //working the opeartor on the numbers set
 function operator(sign) {
   operand = sign;
+  console.log(`Operand is ${operand}`);
   showUi(operand_ui, sign);
   if (arg2 === '') return;
   const int1 = parseInt(arg1);
