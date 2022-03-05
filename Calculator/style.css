@@ -2,8 +2,11 @@ body {
   background-color: #2f3945;
 }
 .container {
-  margin: 5% 20% 0 20%;
-  background-color: #c0c0c0;
+  /* margin: 5% 20% 0 20%; */
+  width: 35%;
+  position: relative;
+  left: 33%;
+  background-color: #ccc;
   display: grid;
   border-radius: 5%;
   grid-template-rows: 0.5fr 4fr 1fr;
@@ -28,7 +31,7 @@ body {
     'one two three minus equals'
     'btnZero plusMinus dot plus equals'
     'Hist Hist Hist Hist Hist';
-  padding-bottom: 0px;
+  /* padding-bottom: 0px; */
 }
 
 .button {
@@ -38,15 +41,16 @@ body {
   border-radius: 5px;
   border-color: #c0c0c0 #7491a5 #7491a5 #c0c0c0;
   border: 1px solid #ffffff;
-  display: inline-block;
   cursor: pointer;
   color: #000000;
   font-family: Arial;
-  font-size: 3em;
+  font-size: 1.9em;
   font-weight: bold;
-  padding: 12px 24px;
   text-decoration: none;
   margin: 3px;
+}
+.numberBtn {
+  width: inherit;
 }
 .Button:hover {
   background: linear-gradient(to bottom, #b5b5b5 5%, #f0f0f0 100%);
@@ -163,6 +167,9 @@ button:active {
 }
 
 #historyContainer {
+  width: 35%;
+  position: relative;
+  left: 13%;
   display: grid;
   background-color: white;
   margin: 0 20% 5% 20%;
@@ -200,12 +207,33 @@ button:active {
   grid-area: history;
   font-size: 2em;
   border-radius: 5%;
-  width: 50%;
+  width: 70%;
 }
 
-@media screen and (max-width: 2000px) {
+/* @media screen and (max-width: 2000px) {
   .container {
-    height: auto;
+    width: 50%;
+    height: 90%;
     position: relative;
+    left: 35%;
+  }
+
+  #historyContainer {
+    width: 30%;
+    position: relative;
+    left: 15%;
   }
 }
+@media screen and (max-width: 850px) {
+  .container {
+    width: 100%;
+    height: auto;
+    position: relative;
+    left: 50%;
+  }
+
+  #result,
+  #buttonContainer {
+    width: 20%;
+  }
+} */

@@ -7,7 +7,7 @@
 
 
 */
-let arg1 = '';
+let arg1 = 0;
 let arg2 = '';
 let result = '';
 let operand = null;
@@ -15,6 +15,8 @@ let historyBox = new Map();
 const showUi = (ui, value) => {
   ui.innerHTML = value;
 };
+
+//UI change variables
 const arg1_ui = document.getElementById('arg1');
 const arg2_ui = document.getElementById('arg2');
 const result_ui = document.getElementById('result');
@@ -32,7 +34,7 @@ function showHide() {
     : (document.getElementById('historyContainer').style.display = 'none');
 }
 
-//trying to make keypresses work
+//trying to make keypresses work with this object/map - Was not able to do it.
 // const keyMap = {
 //   1: () => calc(1),
 //   2: () => calc(2),
@@ -49,19 +51,17 @@ function showHide() {
 //   '*': () => operator('*'),
 //   '/': () => operator('/'),
 // };
-// let regex = /([0-9]+( [0-9]+)+) \+ - \* \//i;
 
 window.addEventListener('keypress', (e) => {
   // let regex = /([0-9]+( [0-9]+)+) \+ - \* \//i;
   let key = e.key;
-  console.log(e.key);
   Number.isInteger(Number(key)) ? calc(Number(key)) : operator(key);
 });
 
 //Number button selector
 document.querySelectorAll('.numberBtn').forEach((a) => {
   a.addEventListener('click', (a) => {
-    calc(a.target.textContent);
+    calc(Number(a.target.textContent));
   });
 });
 
@@ -75,7 +75,6 @@ document.querySelectorAll('.operandBtn').forEach((a) => {
 //Adding numbers to calculate
 function calc(num) {
   if (operand === null) {
-    console.log(num);
     arg1 += num;
     showUi(arg1_ui, arg1);
     console.log(`arg 1 is ${arg1}`);
