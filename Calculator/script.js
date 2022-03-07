@@ -1,13 +1,16 @@
 'use strict';
 /* TODO:
 1. Find a way to make the result box into input and attach keypress on change to it - Done
-2. find a way to interpert the change as Arg1/arg2/operator - Done
+2. find a way to interpert the change as Arg1/arg2/operator/equals/reset - Done
+3. clicking on the history brings the numbers /result up into the result box. - add list/with data inside coming from an array.
 3. find way to change calc to accept numbers (get input from user*10 +input *10 etc etc and then /10 when input goes to operator)
 4. make all inputs and outputs intergers and not strings
-
-
+5. find a better way to recieve input from keyboard that does not require ifelse - Done 
+6. Add functionality to . and +-
+7. Make the Ui nicer - Maybe use tailwindCSS for the exp. 
+8. Make the allowed an array.
 */
-let arg1 = 0;
+let arg1 = '';
 let arg2 = '';
 let result = '';
 let operand = null;
@@ -34,28 +37,52 @@ function showHide() {
     : (document.getElementById('historyContainer').style.display = 'none');
 }
 
-//trying to make keypresses work with this object/map - Was not able to do it.
-// const keyMap = {
-//   1: () => calc(1),
-//   2: () => calc(2),
-//   3: () => calc(3),
-//   4: () => calc(4),
-//   5: () => calc(5),
-//   6: () => calc(6),
-//   7: () => calc(7),
-//   8: () => calc(8),
-//   9: () => calc(9),
-//   0: () => calc(0),
-//   '+': () => operator('+'),
-//   '-': () => operator('-'),
-//   '*': () => operator('*'),
-//   '/': () => operator('/'),
-// };
+const allowed = '123456789EnterBackspace.+-*/';
+window.addEventListener('keyup', (e) => {
+  const key = String(e.key);
+  console.log(key);
+  if (!allowed.includes(key)) {
+    return;
+  }
+  if (Number.isInteger(Number(key))) {
+    return calc(key);
+  }
+  switch (key) {
+    case '+':
+    case '-':
+    case '*':
+      return operator(key);
+    case '/':
+      return operator('÷');
+    case 'Enter':
+      return showResult();
+    case 'Backspace':
+      return reset();
+  }
 
-window.addEventListener('keypress', (e) => {
-  // let regex = /([0-9]+( [0-9]+)+) \+ - \* \//i;
-  let key = e.key;
-  Number.isInteger(Number(key)) ? calc(Number(key)) : operator(key);
+  // const keyMap = {
+  //   1: () => calc('1'),
+  //   2: () => calc('2'),
+  //   3: () => calc('3'),
+  //   4: () => calc('4'),
+  //   5: () => calc('5'),
+  //   6: () => calc('6'),
+  //   7: () => calc(7),
+  //   8: () => calc(8),
+  //   9: () => calc(9),
+  //   0: () => calc(0),
+  //   '+': () => operator('+'),
+  //   '-': () => operator('-'),
+  //   '*': () => operator('*'),
+  //   '/': () => operator('÷'),
+  //   Enter: showResult,
+  //   Backspace: reset,
+  // };
+
+  // let action = keyMap[key];
+  // if (allowed.includes(key)) {
+  //   action();
+  // }
 });
 
 //Number button selector
@@ -77,11 +104,9 @@ function calc(num) {
   if (operand === null) {
     arg1 += num;
     showUi(arg1_ui, arg1);
-    console.log(`arg 1 is ${arg1}`);
   } else {
     arg2 += num;
     showUi(arg2_ui, arg2);
-    console.log(`arg 2 is ${arg2}`);
   }
 }
 
@@ -96,7 +121,6 @@ const operatorMap = {
 //working the opeartor on the numbers set
 function operator(sign) {
   operand = sign;
-  console.log(`Operand is ${operand}`);
   showUi(operand_ui, sign);
   if (arg2 === '') return;
   const int1 = parseInt(arg1);
@@ -119,7 +143,7 @@ function reset() {
   showUi(operand_ui, null);
 }
 
-//record the args, operator and result to be saved into history calc map
+//record the args, operator and result to be saved into history calc object
 function recordHistory(arg1, operator, arg2, result) {
   let calc = String(`${arg1} ${operator} ${arg2}`);
   historyBox.set(result, calc);
@@ -136,12 +160,14 @@ function showHistory(historyBox) {
   showUi(history_ui, `${historyResults}`);
   showUi(historyCalc_ui, `${historyCalc}`);
 }
+
 document.getElementById('deleteHist').onclick = clearHistory;
 function clearHistory() {
   historyBox.clear();
   showUi(history_ui, '');
   showUi(historyCalc_ui, '');
 }
+//Plus Minus button functionality
 
 //Use values from history
 
