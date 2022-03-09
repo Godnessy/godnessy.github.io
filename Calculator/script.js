@@ -39,11 +39,10 @@ function showHide() {
 
 const allowedString = '0 1 2 3 4 5 6 7 8 9 Enter Backspace . + - * /';
 const allowedArr = allowedString.split(' ');
-console.log(allowedArr);
 
 window.addEventListener('keyup', (e) => {
   const key = String(e.key);
-  console.log(key);
+
   if (!allowedArr.includes(key)) {
     return;
   }
@@ -62,30 +61,6 @@ window.addEventListener('keyup', (e) => {
     case 'Backspace':
       return reset();
   }
-
-  // const keyMap = {
-  //   1: () => calc('1'),
-  //   2: () => calc('2'),
-  //   3: () => calc('3'),
-  //   4: () => calc('4'),
-  //   5: () => calc('5'),
-  //   6: () => calc('6'),
-  //   7: () => calc(7),
-  //   8: () => calc(8),
-  //   9: () => calc(9),
-  //   0: () => calc(0),
-  //   '+': () => operator('+'),
-  //   '-': () => operator('-'),
-  //   '*': () => operator('*'),
-  //   '/': () => operator('÷'),
-  //   Enter: showResult,
-  //   Backspace: reset,
-  // };
-
-  // let action = keyMap[key];
-  // if (allowed.includes(key)) {
-  //   action();
-  // }
 });
 
 //Number button selector
@@ -101,6 +76,22 @@ document.querySelectorAll('.operandBtn').forEach((a) => {
     operator(a.target.textContent);
   });
 });
+
+//Plus-Minus functionality
+
+const minusPlus = () => {
+  console.log(arg1, operand, arg2);
+  if (operand == null) {
+    arg1 = `-${arg1}`;
+    showUi(arg1_ui, arg1);
+    return arg1;
+  } else {
+    arg2 = `-${arg2}`;
+    showUi(arg2_ui, arg2);
+    return arg2;
+  }
+};
+document.getElementById('plusMinus').onclick = minusPlus;
 
 //Adding numbers to calculate
 function calc(num) {
