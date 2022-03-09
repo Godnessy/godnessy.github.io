@@ -8,7 +8,7 @@
 5. find a better way to recieve input from keyboard that does not require ifelse - Done 
 6. Add functionality to . and +-
 7. Make the Ui nicer - Maybe use tailwindCSS for the exp. 
-8. Make the allowed an array.
+8. Make the allowed an array.  - Done
 */
 let arg1 = '';
 let arg2 = '';
@@ -37,11 +37,14 @@ function showHide() {
     : (document.getElementById('historyContainer').style.display = 'none');
 }
 
-const allowed = '123456789EnterBackspace.+-*/';
+const allowedString = '0 1 2 3 4 5 6 7 8 9 Enter Backspace . + - * /';
+const allowedArr = allowedString.split(' ');
+console.log(allowedArr);
+
 window.addEventListener('keyup', (e) => {
   const key = String(e.key);
   console.log(key);
-  if (!allowed.includes(key)) {
+  if (!allowedArr.includes(key)) {
     return;
   }
   if (Number.isInteger(Number(key))) {
