@@ -1,14 +1,10 @@
 'use strict';
 /* TODO:
-1. Find a way to make the result box into input and attach keypress on change to it - Done
-2. find a way to interpert the change as Arg1/arg2/operator/equals/reset - Done
 3. clicking on the history brings the numbers /result up into the result box. - add list/with data inside coming from an array.
 3. find way to change calc to accept numbers (get input from user*10 +input *10 etc etc and then /10 when input goes to operator)
-4. make all inputs and outputs intergers and not strings
-5. find a better way to recieve input from keyboard that does not require ifelse - Done 
-6. Add functionality to . and +-
+4. make all outputs intergers and not strings
+6. Fix +- bug (clicking +- twice after inputing arg2)
 7. Make the Ui nicer - Maybe use tailwindCSS for the exp. 
-8. Make the allowed an array.  - Done
 */
 let arg1 = '';
 let arg2 = '';
@@ -77,23 +73,25 @@ document.querySelectorAll('.operandBtn').forEach((a) => {
   });
 });
 
-//Plus-Minus functionality
+//Plus-Minus and fraction functionality
+document.querySelectorAll('.operationBtn').forEach((a) => {
+  a.addEventListener('click', (a) => {
+    if (a.target.innerHTML == '±') {
+      operand == null
+        ? ((arg1 = `-${arg1}`), showUi(arg1_ui, arg1))
+        : operand == '-'
+        ? ((arg2 = `-${arg2}`),
+          (document.getElementById('arg2').innerHTML = `(${arg2})`))
+        : ((arg2 = `-${arg2}`), showUi(arg2_ui, arg2));
+    } else {
+      arg2 == '' ? (arg1 = `${arg1}.`) : (arg2 = `${arg2}.`);
+      showUi(arg1_ui, arg1);
+      showUi(arg2_ui, arg2);
+    }
+  });
+});
 
-const minusPlus = () => {
-  console.log(arg1, operand, arg2);
-  if (operand == null) {
-    arg1 = `-${arg1}`;
-    showUi(arg1_ui, arg1);
-    return arg1;
-  } else {
-    arg2 = `-${arg2}`;
-    showUi(arg2_ui, arg2);
-    return arg2;
-  }
-};
-document.getElementById('plusMinus').onclick = minusPlus;
-
-//Adding numbers to calculate
+//Adding numbers to args
 function calc(num) {
   if (operand === null) {
     arg1 += num;
@@ -117,8 +115,8 @@ function operator(sign) {
   operand = sign;
   showUi(operand_ui, sign);
   if (arg2 === '') return;
-  const int1 = parseInt(arg1);
-  const int2 = parseInt(arg2);
+  const int1 = Number(arg1);
+  const int2 = Number(arg2);
   const func = operatorMap[sign];
   result = func(int1, int2);
 
@@ -169,13 +167,19 @@ function clearHistory() {
 document.getElementById('equals').onclick = showResult;
 
 function showResult() {
-  operator(operand);
-  recordHistory(arg1, operand, arg2, result);
-  operand = null;
-  showUi(arg1_ui, '');
-  showUi(arg2_ui, '');
-  showUi(operand_ui, '');
-  showUi(result_ui, result);
-  arg1 = result;
-  arg2 = '';
+  if (operand == null) {
+    return;
+  } else if (arg2 == '') {
+    return;
+  } else {
+    operator(operand);
+    recordHistory(arg1, operand, arg2, result);
+    operand = null;
+    showUi(arg1_ui, '');
+    showUi(arg2_ui, '');
+    showUi(operand_ui, '');
+    showUi(result_ui, result);
+    arg1 = result;
+    arg2 = '';
+  }
 }
