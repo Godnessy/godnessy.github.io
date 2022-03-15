@@ -38,6 +38,7 @@ const allowedArr = allowedString.split(' ');
 
 window.addEventListener('keyup', (e) => {
   const key = String(e.key);
+  console.log(key);
 
   if (!allowedArr.includes(key)) {
     return;
@@ -56,6 +57,9 @@ window.addEventListener('keyup', (e) => {
       return showResult();
     case 'Backspace':
       return reset();
+    case '.':
+    case ',':
+      return calc(key);
   }
 });
 
@@ -73,24 +77,48 @@ document.querySelectorAll('.operandBtn').forEach((a) => {
   });
 });
 
-//Plus-Minus and fraction functionality
-document.querySelectorAll('.operationBtn').forEach((a) => {
-  a.addEventListener('click', (a) => {
-    if (a.target.innerHTML == '±') {
-      operand == null
-        ? ((arg1 = `-${arg1}`), showUi(arg1_ui, arg1))
-        : operand == '-'
-        ? ((arg2 = `-${arg2}`),
-          (document.getElementById('arg2').innerHTML = `(${arg2})`))
-        : ((arg2 = `-${arg2}`), showUi(arg2_ui, arg2));
-    } else {
-      arg2 == '' ? (arg1 = `${arg1}.`) : (arg2 = `${arg2}.`);
-      showUi(arg1_ui, arg1);
-      showUi(arg2_ui, arg2);
-    }
-  });
-});
+// Plus-Minus functionality
+// document.querySelectorAll('.operationBtn').forEach((a) => {
+//   a.addEventListener('click', (a) => {
+//     if (a.target.innerHTML == '±') {
+//       operand == null ? arg1[0] == '-'
+//         ? ((arg1 = `-${arg1}`), showUi(arg1_ui, arg1))
+//         : operand == '-'
+//         ? ((arg2 = `-${arg2}`),
+//           (document.getElementById('arg2').innerHTML = `(${arg2})`))
+//         : ((arg2 = `-${arg2}`), showUi(arg2_ui, arg2))
 
+// });
+
+let plusMinus = () => {
+  if (operand == null) {
+    console.log('lvl1');
+    String(arg1)[0] == '-'
+      ? (arg1 = String(arg1).substring(1))
+      : (arg1 = `-${arg1}`);
+  } else {
+    console.log('lvl2');
+    arg2[0] === '-' ? (arg2 = arg2.substring(1)) : (arg2 = `-${arg2}`);
+    showUi(arg2_ui, '');
+  }
+  showUi(result_ui, '');
+  showUi(arg1_ui, arg1);
+  showUi(arg2_ui, arg2);
+};
+document.getElementById('plusMinus').onclick = plusMinus;
+
+//fractional numbers functionality
+let fraction = () => {
+  arg2 == '' ? (arg1 = `${arg1}.`) : (arg2 = `${arg2}.`);
+  showUi(arg1_ui, arg1);
+  showUi(arg2_ui, arg2);
+};
+
+document.getElementById('point').onclick = fraction;
+
+// document
+//   .getElementById('plusMinus')
+//   .addEventListener('click', plusMinus(operand));
 //Adding numbers to args
 function calc(num) {
   if (operand === null) {
