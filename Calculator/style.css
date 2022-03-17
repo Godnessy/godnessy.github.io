@@ -4,10 +4,10 @@ body {
 }
 .container {
   margin: 5% 0% 0% 0%;
-  width: 50%;
+  width: 30%;
   height: 35em;
   position: relative;
-  left: 25%;
+  left: 35%;
   background-color: black;
   display: grid;
   border-radius: 5%;
@@ -172,34 +172,36 @@ button:active {
 }
 
 #historyContainer {
-  width: 40%;
+  width: 30%;
+  height: 10em;
   position: relative;
   left: 15%;
   display: grid;
-  background-color: black;
+  background-color: white;
   color: #f68804;
   margin: 0 20% 5% 20%;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 5fr;
-  grid-template-areas:
-    'clear clear'
-    'calc result';
+  grid-template-areas: 'result calc';
   border-radius: 5%;
   font-size: 1.5em;
+  overflow-y: scroll;
 }
 
-#history {
+#histResult {
   grid-area: calc;
-  padding-top: 5px;
-  padding-left: 10px;
-  border-bottom: solid 1px black;
+  padding-left: 0.5em;
+  list-style-type: none;
 }
 
 #historyCalc {
   grid-area: result;
-  padding-top: 5px;
   position: relative;
-  left: 20%;
+  list-style-type: none;
+}
+
+.data {
+  cursor: pointer;
+  border-bottom: 1px black solid;
 }
 
 .historyBtn {
@@ -234,8 +236,7 @@ button:active {
 
 @media screen and (max-width: 1050px) {
   .container {
-    width: 50%;
-
+    width: 40%;
     position: relative;
     left: 25%;
   }
@@ -244,7 +245,7 @@ button:active {
     width: 40%;
     height: auto;
     position: relative;
-    left: 15%;
+    left: 5%;
   }
 }
 

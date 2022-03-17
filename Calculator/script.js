@@ -1,9 +1,7 @@
 'use strict';
 /* TODO:
-3. clicking on the history brings the numbers /result up into the result box. - add list/with data inside coming from an array.
 3. find way to change calc to accept numbers (get input from user*10 +input *10 etc etc and then /10 when input goes to operator)
-4. make all outputs intergers and not strings
-6. Fix +- bug (clicking +- twice after inputing arg2)
+4. make all outputs intergers and not strings.
 7. Make the Ui nicer - Maybe use tailwindCSS for the exp. 
 */
 let arg1 = '';
@@ -20,7 +18,7 @@ const arg1_ui = document.getElementById('arg1');
 const arg2_ui = document.getElementById('arg2');
 const result_ui = document.getElementById('result');
 const operand_ui = document.getElementById('operand');
-const history_ui = document.getElementById('history');
+const history_ui = document.getElementById('historyResult');
 const historyCalc_ui = document.getElementById('historyCalc');
 
 // History display/hide
@@ -38,19 +36,19 @@ const allowedArr = allowedString.split(' ');
 
 window.addEventListener('keyup', (e) => {
   const key = String(e.key);
-  console.log(key);
-
   if (!allowedArr.includes(key)) {
+    console.log('nothing');
     return;
   }
   if (Number.isInteger(Number(key))) {
+    console.log(`Adding ${key} to calc`);
     return calc(key);
   }
   switch (key) {
     case '+':
     case '-':
     case '*':
-      return operator(key);
+      return console.log(`${operator(key)}`), operator(key);
     case '/':
       return operator('÷');
     case 'Enter':
@@ -77,19 +75,7 @@ document.querySelectorAll('.operandBtn').forEach((a) => {
   });
 });
 
-// Plus-Minus functionality
-// document.querySelectorAll('.operationBtn').forEach((a) => {
-//   a.addEventListener('click', (a) => {
-//     if (a.target.innerHTML == '±') {
-//       operand == null ? arg1[0] == '-'
-//         ? ((arg1 = `-${arg1}`), showUi(arg1_ui, arg1))
-//         : operand == '-'
-//         ? ((arg2 = `-${arg2}`),
-//           (document.getElementById('arg2').innerHTML = `(${arg2})`))
-//         : ((arg2 = `-${arg2}`), showUi(arg2_ui, arg2))
-
-// });
-
+//Plus minus functionality
 let plusMinus = () => {
   if (operand == null) {
     console.log('lvl1');
@@ -167,19 +153,41 @@ function reset() {
 function recordHistory(arg1, operator, arg2, result) {
   let calc = String(`${arg1} ${operator} ${arg2}`);
   historyBox.set(result, calc);
-  showHistory(historyBox);
 }
+
+//Insert history into 2 lists to be picked later by clicking on them
 
 function showHistory(historyBox) {
-  let historyResults = [...historyBox.keys()]
-    .toString()
-    .split(',')
-    .join('<br>');
+  showUi(history_ui, '');
+  showUi(historyCalc_ui, '');
+  for (const [key, value] of historyBox) {
+    const newValue = `<li class ="data" id="histResult">= ${String(key)}</li>`;
+    const newCalc = `<li class ="data" id="histCalc">${String(value)}</li>`;
 
-  let historyCalc = [...historyBox.values()].toString().split(',').join('<br>');
-  showUi(history_ui, `${historyResults}`);
-  showUi(historyCalc_ui, `${historyCalc}`);
+    history_ui.insertAdjacentHTML('afterbegin', newValue);
+    historyCalc_ui.insertAdjacentHTML('afterbegin', newCalc);
+  }
 }
+
+//Adding elements from history back to calculation
+document.querySelectorAll('.dataInputs').forEach((a) => {
+  a.addEventListener('click', (a) => {
+    let innerHtml = a.target.innerHTML;
+
+    if (a.target.id == 'histCalc') {
+      reset();
+      let futureCalc = innerHtml.split(' ');
+      calc(futureCalc[0]);
+      operator(futureCalc[1]);
+      calc(futureCalc[2]);
+    } else if (operand == null) {
+      reset();
+      calc(innerHtml.substring(2));
+    } else if (arg2 == '') {
+      calc(innerHtml.substring(2));
+    }
+  });
+});
 
 document.getElementById('deleteHist').onclick = clearHistory;
 function clearHistory() {
@@ -187,9 +195,6 @@ function clearHistory() {
   showUi(history_ui, '');
   showUi(historyCalc_ui, '');
 }
-//Plus Minus button functionality
-
-//Use values from history
 
 //UI functions
 document.getElementById('equals').onclick = showResult;
@@ -202,6 +207,7 @@ function showResult() {
   } else {
     operator(operand);
     recordHistory(arg1, operand, arg2, result);
+    showHistory(historyBox);
     operand = null;
     showUi(arg1_ui, '');
     showUi(arg2_ui, '');
