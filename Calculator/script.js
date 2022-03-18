@@ -95,6 +95,7 @@ document.getElementById('plusMinus').onclick = plusMinus;
 
 //fractional numbers functionality
 let fraction = () => {
+  showUi(result_ui, '');
   arg2 == '' ? (arg1 = `${arg1}.`) : (arg2 = `${arg2}.`);
   showUi(arg1_ui, arg1);
   showUi(arg2_ui, arg2);
