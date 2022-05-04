@@ -1,0 +1,40 @@
+body {
+  background-color: lightgreen;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.board {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  border: 1px solid black;
+  margin: 10% 50%;
+  width: 33rem;
+  height: auto;
+}
+
+.targetable {
+  display: flex;
+  background-color: rgb(60, 180, 217);
+  width: 4rem;
+  height: 4rem;
+}
+
+.unTargetable {
+  background-color: white;
+  width: 4rem;
+  height: 4rem;
+}
+
+img {
+  width: 100%;
+}
+
+.invisible {
+  display: none;
+}
+
+#g7 {
+  position: relative;
+}
